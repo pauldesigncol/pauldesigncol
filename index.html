@@ -2,54 +2,99 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Paul Design COL - Personaliza tu estilo</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paul Design COL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { background-color: #f8f9fa; }
-    .product-img { max-width: 100%; border-radius: 8px; }
-    .whatsapp-btn {
-      background-color: #25D366;
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+    .product {
+      background: #fff;
+      border-radius: 8px;
+      margin: 10px;
+      padding: 10px;
+      width: 200px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 4px;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
       color: white;
-      padding: 10px 20px;
-      border-radius: 50px;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
       text-decoration: none;
-      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
     }
   </style>
 </head>
 <body>
-  <header class="text-center p-4 bg-dark text-white">
-    <h1>Paul Design COL</h1>
-    <p>Personalización en camisetas, buzos, pocillos y más</p>
-  </header>
 
-  <section class="container my-5">
-    <h2 class="text-center mb-4">Nuestros productos</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <img src="camiseta1.jpg" alt="Camiseta personalizada" class="product-img">
-        <p class="mt-2">Camiseta con diseño sublimado</p>
-      </div>
-      <div class="col-md-4">
-        <img src="buzo1.jpg" alt="Buzo personalizado" class="product-img">
-        <p class="mt-2">Buzo con vinilo textil</p>
-      </div>
-      <div class="col-md-4">
-        <img src="pocillo1.jpg" alt="Pocillo personalizado" class="product-img">
-        <p class="mt-2">Pocillo con imagen personalizada</p>
-      </div>
-    </div>
-  </section>
+<header>
+  <h1>Paul Design COL</h1>
+  <p>Camisetas personalizadas con estilo profesional</p>
+</header>
 
-  <section class="text-center my-5">
-    <h3>¿Quieres personalizar tu producto?</h3>
-    <p>Contáctanos por WhatsApp para confirmar tu pedido y recibir el link de pago.</p>
-    <a href="https://wa.me/57TU_NUMERO" class="whatsapp-btn" target="_blank">Escríbenos por WhatsApp</a>
-  </section>
+<section class="gallery">
+  <div class="product">
+    <img src="camiseta1.jpg" alt="Camiseta personalizada">
+    <p>Camiseta Bogotá Style</p>
+  </div>
+  <div class="product">
+    <img src="camiseta2.jpg" alt="Camiseta personalizada">
+    <p>Camiseta Creativa</p>
+  </div>
+  <!-- Puedes duplicar más bloques .product -->
+</section>
 
-  <footer class="text-center p-3 bg-light">
-    <p>&copy; 2025 Paul Design COL - Todos los derechos reservados</p>
-  </footer>
+<a class="whatsapp" href="https://wa.me/573178052836?text=Hola%20Paul,%20quiero%20personalizar%20una%20camiseta" target="_blank">💬</a>
+
+<footer>
+  <p>📍 Bogotá, Colombia</p>
+  <div class="social-icons">
+  <a href="https://www.instagram.com/pauldesigncol/" target="_blank">Instagram</a>
+  <a href="https://www.facebook.com/profile.php?id=61566438401213" target="_blank">Facebook</a>
+  <a href="https://www.tiktok.com/@pauldesigncol" target="_blank">TikTok</a>
+</div>
+
+  <p>&copy; 2025 Paul Design COL</p>
+</footer>
+
 </body>
 </html>
