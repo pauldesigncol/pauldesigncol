@@ -127,8 +127,11 @@
     gap: 10px;
     z-index: 999;
     transition: opacity 0.3s ease;
-    opacity: 1;
-    visibility: visible;
+  }
+
+  .social-floating.hidden {
+    opacity: 0;
+    pointer-events: none;
   }
 
   .social-floating a {
@@ -151,6 +154,7 @@
   }
 </style>
 
+
 <!-- Ocultar íconos al llegar al pie de página -->
 <script>
   window.addEventListener('scroll', function() {
@@ -160,15 +164,12 @@
     const windowHeight = window.innerHeight;
 
     if (footerTop < windowHeight) {
-      icons.style.visibility = 'hidden';
-      icons.style.opacity = '0';
+      icons.classList.add('hidden');
     } else {
-      icons.style.visibility = 'visible';
-      icons.style.opacity = '1';
+      icons.classList.remove('hidden');
     }
   });
 </script>
-
 
 </body>
 </html>
