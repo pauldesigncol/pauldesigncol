@@ -141,6 +141,58 @@
   background: #555;
 }
 </style>
+<!-- Botones flotantes de redes sociales -->
+<div class="social-floating">
+  <a href="https://www.instagram.com/pauldesigncol/" target="_blank" title="Instagram">📸</a>
+  <a href="https://www.facebook.com/profile.php?id=61566438401213" target="_blank" title="Facebook">📘</a>
+  <a href="https://www.tiktok.com/@pauldesigncol" target="_blank" title="TikTok">🎵</a>
+</div>
+
+<style>
+  .social-floating {
+    position: fixed;
+    bottom: 100px; /* Subido para no tapar contenido */
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+  }
+  .social-floating a {
+    background: #222;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: background 0.3s;
+  }
+  .social-floating a:hover {
+    background: #555;
+  }
+
+  /* Margen inferior para evitar superposición */
+  section#politica, section#terminos {
+    margin-bottom: 120px;
+  }
+</style>
+
+<!-- Ocultar íconos al llegar al pie de página -->
+<script>
+  window.addEventListener('scroll', function() {
+    const footer = document.querySelector('footer');
+    const icons = document.querySelector('.social-floating');
+    const footerTop = footer.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (footerTop < windowHeight) {
+      icons.style.display = 'none';
+    } else {
+      icons.style.display = 'flex';
+    }
+  });
+</script>
 
 </body>
 </html>
