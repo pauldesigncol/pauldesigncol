@@ -127,6 +127,17 @@
     gap: 10px;
     z-index: 999;
   }
+    .social-floating {
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+    transition: opacity 0.3s ease;
+  }
+
   .social-floating a {
     background: #222;
     color: #fff;
@@ -156,12 +167,15 @@
     const windowHeight = window.innerHeight;
 
     if (footerTop < windowHeight) {
-      icons.style.display = 'none';
+      icons.style.visibility = 'hidden';
+      icons.style.opacity = '0';
     } else {
-      icons.style.display = 'flex';
+      icons.style.visibility = 'visible';
+      icons.style.opacity = '1';
     }
   });
 </script>
+
 
 </body>
 </html>
