@@ -58,6 +58,7 @@
       align-items: center;
       justify-content: center;
       padding: 0;
+      animation: pulse 2.5s infinite;
     }
 
     .whatsapp img {
@@ -68,6 +69,12 @@
 
     .whatsapp:hover {
       transform: scale(1.1);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
     }
 
     footer {
@@ -126,10 +133,6 @@
 
     .social-floating a:hover {
       transform: scale(1.1);
-    }
-
-    section#politica, section#terminos {
-      margin-bottom: 120px;
     }
   </style>
 </head>
