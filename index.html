@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Paul Design COL</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
@@ -13,18 +13,21 @@
       background: #f4f4f4;
       color: #333;
     }
+
     header {
       background: #222;
       color: #fff;
       padding: 20px;
       text-align: center;
     }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       padding: 20px;
     }
+
     .product {
       background: #fff;
       border-radius: 8px;
@@ -34,6 +37,7 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       text-align: center;
     }
+
     .product img {
       width: 100%;
       border-radius: 4px;
@@ -45,15 +49,20 @@
       right: 20px;
       background: #25D366;
       border-radius: 50%;
-      padding: 8px;
+      padding: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
       transition: transform 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
     .whatsapp img {
       width: 40px;
       height: 40px;
-      display: block;
+      object-fit: contain;
     }
+
     .whatsapp:hover {
       transform: scale(1.1);
     }
@@ -64,18 +73,21 @@
       text-align: center;
       padding: 20px;
     }
+
     .social-icons a {
       margin: 0 10px;
       color: #fff;
       text-decoration: none;
-      font-size: 20px;
+      font-size: 18px;
       display: inline-flex;
       align-items: center;
     }
+
     .social-icons img {
       width: 20px;
       height: 20px;
       margin-right: 6px;
+      object-fit: contain;
     }
 
     .social-floating {
@@ -85,21 +97,27 @@
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       z-index: 999;
     }
+
     .social-floating a {
-      background: #fff;
+      background: #25D366;
       border-radius: 50%;
-      padding: 6px;
+      padding: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
       transition: transform 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
     .social-floating img {
-      width: 32px;
-      height: 32px;
-      display: block;
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
     }
+
     .social-floating a:hover {
       transform: scale(1.1);
     }
@@ -118,11 +136,11 @@
 
 <section class="gallery">
   <div class="product">
-    <img src="camiseta1.jpg" alt="Camiseta personalizada">
+    <img src="camiseta1.jpg" alt="Camiseta personalizada" />
     <p>Camiseta Bogotá Style</p>
   </div>
   <div class="product">
-    <img src="camiseta2.jpg" alt="Camiseta personalizada">
+    <img src="camiseta2.jpg" alt="Camiseta personalizada" />
     <p>Camiseta Creativa</p>
   </div>
 </section>
