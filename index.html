@@ -63,23 +63,16 @@
       font-size: 20px;
     }
 
+    /* Íconos flotantes en el lateral derecho */
     .social-floating {
       position: fixed;
-      bottom: 100px;
-      left: 20px;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
       display: flex;
       flex-direction: column;
       gap: 10px;
       z-index: 999;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .social-floating.oculto {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
     }
 
     .social-floating a {
@@ -147,26 +140,12 @@
   <p>Nos reservamos el derecho de actualizar los contenidos del sitio sin previo aviso para mejorar la experiencia y la calidad del servicio.</p>
 </section>
 
+<!-- Íconos flotantes en el lateral derecho -->
 <div class="social-floating">
   <a href="https://www.instagram.com/pauldesigncol/" target="_blank" title="Instagram">📸</a>
   <a href="https://www.facebook.com/profile.php?id=61566438401213" target="_blank" title="Facebook">📘</a>
   <a href="https://www.tiktok.com/@pauldesigncol" target="_blank" title="TikTok">🎵</a>
 </div>
-
-<script>
-  window.addEventListener('scroll', function() {
-    const footer = document.querySelector('footer');
-    const icons = document.querySelector('.social-floating');
-    const footerTop = footer.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-
-    if (footerTop - windowHeight < -50) {
-      icons.classList.add('oculto');
-    } else {
-      icons.classList.remove('oculto');
-    }
-  });
-</script>
 
 </body>
 </html>
