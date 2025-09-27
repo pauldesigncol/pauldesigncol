@@ -38,18 +38,26 @@
       width: 100%;
       border-radius: 4px;
     }
+
     .whatsapp {
       position: fixed;
       bottom: 20px;
       right: 20px;
       background: #25D366;
-      color: white;
       border-radius: 50%;
-      padding: 15px;
-      font-size: 24px;
-      text-decoration: none;
+      padding: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
     }
+    .whatsapp img {
+      width: 40px;
+      height: 40px;
+      display: block;
+    }
+    .whatsapp:hover {
+      transform: scale(1.1);
+    }
+
     footer {
       background: #222;
       color: #fff;
@@ -61,9 +69,15 @@
       color: #fff;
       text-decoration: none;
       font-size: 20px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .social-icons img {
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
     }
 
-    /* Íconos flotantes en el lateral derecho */
     .social-floating {
       position: fixed;
       top: 50%;
@@ -74,20 +88,20 @@
       gap: 10px;
       z-index: 999;
     }
-
     .social-floating a {
-      background: #222;
-      color: #fff;
-      text-decoration: none;
-      font-size: 20px;
-      padding: 10px;
+      background: #fff;
       border-radius: 50%;
+      padding: 6px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      transition: background 0.3s;
+      transition: transform 0.3s;
     }
-
+    .social-floating img {
+      width: 32px;
+      height: 32px;
+      display: block;
+    }
     .social-floating a:hover {
-      background: #555;
+      transform: scale(1.1);
     }
 
     section#politica, section#terminos {
@@ -113,16 +127,27 @@
   </div>
 </section>
 
-<a class="whatsapp" href="https://wa.me/573178052836?text=Hola%20Paul,%20quiero%20personalizar%20una%20camiseta" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/573178052836?text=Hola%20Paul,%20quiero%20personalizar%20una%20camiseta" target="_blank" title="WhatsApp Business">
+  <img src="icons/whatsapp-business.svg" alt="WhatsApp Business" />
+</a>
 
 <footer>
   <p>📍 Bogotá, Colombia</p>
   <div class="social-icons">
-    <a href="https://www.instagram.com/pauldesigncol/" target="_blank" rel="noopener noreferrer">Instagram</a>
-    <a href="https://www.facebook.com/profile.php?id=61566438401213" target="_blank" rel="noopener noreferrer">Facebook</a>
-    <a href="https://www.tiktok.com/@pauldesigncol" target="_blank" rel="noopener noreferrer">TikTok</a>
+    <a href="https://www.instagram.com/pauldesigncol/" target="_blank">
+      <img src="icons/instagram.svg" alt="Instagram" /> Instagram
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61566438401213" target="_blank">
+      <img src="icons/facebook.svg" alt="Facebook" /> Facebook
+    </a>
+    <a href="https://www.tiktok.com/@pauldesigncol" target="_blank">
+      <img src="icons/tiktok.svg" alt="TikTok" /> TikTok
+    </a>
   </div>
-  <p><a href="#politica">Política de Privacidad</a> | <a href="#terminos">Términos y Condiciones</a></p>
+  <p>
+    <a href="#politica">🔒 Política de Privacidad</a> |
+    <a href="#terminos">📄 Términos y Condiciones</a>
+  </p>
   <p>&copy; 2025 Paul Design COL</p>
 </footer>
 
@@ -140,11 +165,16 @@
   <p>Nos reservamos el derecho de actualizar los contenidos del sitio sin previo aviso para mejorar la experiencia y la calidad del servicio.</p>
 </section>
 
-<!-- Íconos flotantes en el lateral derecho -->
 <div class="social-floating">
-  <a href="https://www.instagram.com/pauldesigncol/" target="_blank" title="Instagram">📸</a>
-  <a href="https://www.facebook.com/profile.php?id=61566438401213" target="_blank" title="Facebook">📘</a>
-  <a href="https://www.tiktok.com/@pauldesigncol" target="_blank" title="TikTok">🎵</a>
+  <a href="https://www.instagram.com/pauldesigncol/" target="_blank" title="Instagram">
+    <img src="icons/instagram.svg" alt="Instagram" />
+  </a>
+  <a href="https://www.facebook.com/profile.php?id=61566438401213" target="_blank" title="Facebook">
+    <img src="icons/facebook.svg" alt="Facebook" />
+  </a>
+  <a href="https://www.tiktok.com/@pauldesigncol" target="_blank" title="TikTok">
+    <img src="icons/tiktok.svg" alt="TikTok" />
+  </a>
 </div>
 
 </body>
