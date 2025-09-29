@@ -13,18 +13,21 @@
       background: #f4f4f4;
       color: #333;
     }
+
     header {
       background: #222;
       color: #fff;
       padding: 20px;
       text-align: center;
     }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       padding: 20px;
     }
+
     .product {
       background: #fff;
       border-radius: 8px;
@@ -34,15 +37,18 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       text-align: center;
     }
+
     .product img {
       width: 100%;
       border-radius: 4px;
     }
+
     .menu-principal {
       background: #222;
       padding: 10px 0;
       text-align: center;
     }
+
     .menu-principal ul {
       list-style: none;
       margin: 0;
@@ -51,9 +57,11 @@
       flex-wrap: wrap;
       justify-content: center;
     }
+
     .menu-principal li {
       margin: 5px 10px;
     }
+
     .menu-principal a {
       color: #fff;
       text-decoration: none;
@@ -62,19 +70,157 @@
       border-radius: 4px;
       transition: background 0.3s;
     }
+
     .menu-principal a:hover {
       background: #444;
     }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 48px;
+      height: 48px;
+      background: #25D366;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      animation: pulse 2.5s infinite;
+      z-index: 999;
+    }
+
+    .whatsapp img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .social-floating {
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 998;
+    }
+
+    .social-floating a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      padding: 0;
+    }
+
+    .social-floating img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .social-floating a:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
     @media (max-width: 600px) {
       .menu-principal ul {
         flex-direction: column;
         align-items: center;
       }
+
       .menu-principal a {
         display: block;
         width: 90%;
         margin: 5px 0;
         background: #333;
+      }
+
+      .gallery {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .product {
+        width: 90%;
+        max-width: 300px;
+        margin: 10px auto;
+      }
+
+      .social-floating {
+        bottom: 80px;
+        right: 20px;
+        top: auto;
+        transform: none;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .social-floating a {
+        width: 36px;
+        height: 36px;
+      }
+
+      .whatsapp {
+        bottom: 20px;
+        right: 20px;
+        width: 48px;
+        height: 48px;
+      }
+
+      .whatsapp img,
+      .social-floating img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      footer {
+        padding: 15px;
+        font-size: 14px;
+      }
+
+      .social-icons a {
+        font-size: 16px;
+      }
+
+      .social-icons img {
+        width: 18px;
+        height: 18px;
+        margin-right: 4px;
+      }
+
+      section#politica,
+      section#terminos {
+        padding: 15px;
+      }
+
+      section h2 {
+        font-size: 18px;
+      }
+
+      section p {
+        font-size: 14px;
+        line-height: 1.5;
       }
     }
   </style>
