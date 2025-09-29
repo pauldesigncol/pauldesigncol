@@ -67,6 +67,81 @@
       display: block;
     }
 
+    .mockup-slider {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      overflow: hidden;
+      border: 2px solid #ccc;
+      background: #fff;
+    }
+
+    .slider {
+      display: flex;
+      animation: deslizar 12s infinite linear;
+    }
+
+    .placeholder {
+      width: 100%;
+      height: 300px;
+      background: #fff;
+      border: 2px dashed #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .overlay-box {
+      width: 40%;
+      height: 150px;
+      background: rgba(0,0,0,0.05);
+      border: 2px solid #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 16px;
+      animation: pausa 12s infinite ease-in-out;
+    }
+
+    @keyframes deslizar {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+
+    @keyframes pausa {
+      0%, 33%, 66% { opacity: 0.85; transform: scale(1); }
+      16%, 50%, 83% { opacity: 1; transform: scale(1.05); }
+    }
+
+    .social-floating {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 998;
+    }
+
     .whatsapp {
       position: fixed;
       bottom: 20px;
@@ -84,35 +159,7 @@
       z-index: 999;
     }
 
-    .whatsapp img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .social-floating {
-      position: fixed;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 998;
-    }
-
-    .social-floating a {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-    }
-
+    .whatsapp img,
     .social-floating img {
       width: 100%;
       height: 100%;
@@ -124,9 +171,33 @@
       50% { transform: scale(1.08); }
       100% { transform: scale(1); }
     }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
   </style>
 </head>
 <body>
+<!-- Carrusel animado con recuadros blancos -->
+<div class="mockup-slider">
+  <div class="slider">
+    <div class="placeholder">Producto 1</div>
+    <div class="placeholder">Producto 2</div>
+    <div class="placeholder">Producto 3</div>
+  </div>
+  <div class="overlay">
+    <div class="overlay-box">Diseño del usuario</div>
+  </div>
+</div>
 
 <header>
   <h1>Paul Design COL</h1>
@@ -141,55 +212,33 @@
     <li><a href="javascript:void(0)" onclick="mostrarSeccion('bordado')">🧵 Bordado 10×10</a></li>
     <li><a href="javascript:void(0)" onclick="mostrarSeccion('fotografia')">📸 Fotografía Impresa</a></li>
     <li><a href="javascript:void(0)" onclick="mostrarSeccion('vinilo')">🎨 Vinilo Textil</a></li>
-    <li><a href="javascript:void(0)" onclick="mostrarSeccion('politica')">🔒 Política de Privacidad</a></li>
-    <li><a href="javascript:void(0)" onclick="mostrarSeccion('terminos')">📄 Términos y Condiciones</a></li>
   </ul>
 </nav>
+
 <section id="camisetas" class="seccion">
   <h2>👕 Camisetas y Buzos</h2>
-  <img src="camiseta1.jpg" alt="Camiseta personalizada" />
   <p>Diseños que hablan por ti. Personalizamos cada prenda con vinilo textil, impresión directa o bordado.</p>
 </section>
 
 <section id="mugs" class="seccion">
   <h2>☕ Mugs y Termos</h2>
-  <img src="mug1.jpg" alt="Mug personalizado" />
   <p>Sublimación profesional con tinta Epson F170 y horno de convección. Alta calidad y durabilidad.</p>
 </section>
 
 <section id="bordado" class="seccion">
   <h2>🧵 Bordado 10×10</h2>
-  <img src="bordado1.jpg" alt="Bordado personalizado" />
   <p>Aplicación profesional con Brother SE700. Logos, nombres o detalles decorativos sobre buzos y camisetas.</p>
 </section>
 
 <section id="fotografia" class="seccion">
   <h2>📸 Fotografía Impresa</h2>
-  <img src="foto1.jpg" alt="Fotografía impresa" />
   <p>Impresión sobre tela, papel o productos personalizados. Ideal para recuerdos y decoración creativa.</p>
 </section>
 
 <section id="vinilo" class="seccion">
   <h2>🎨 Vinilo Textil</h2>
-  <img src="vinilo1.jpg" alt="Vinilo textil" />
   <p>Corte preciso con Silhouette Cameo 5. Aplicación sobre textiles con plancha térmica para acabados impecables.</p>
 </section>
-
-<a class="whatsapp" href="https://wa.me/573178052836?text=Hola%20Paul,%20quiero%20personalizar%20un%20producto" target="_blank" title="WhatsApp Business">
-  <img src="icons/whatsapp-business.svg" alt="WhatsApp Business" />
-</a>
-
-<div class="social-floating">
-  <a href="https://www.instagram.com/pauldesigncol/" target="_blank" title="Instagram">
-    <img src="icons/instagram.svg" alt="Instagram" />
-  </a>
-  <a href="https://www.facebook.com/profile.php?id=61566438401213" target="_blank" title="Facebook">
-    <img src="icons/facebook.svg" alt="Facebook" />
-  </a>
-  <a href="https://www.tiktok.com/@pauldesigncol" target="_blank" title="TikTok">
-    <img src="icons/tiktok.svg" alt="TikTok" />
-  </a>
-</div>
 <section id="politica" class="seccion">
   <h2>Política de Privacidad</h2>
   <p>Este sitio no recopila datos personales ni utiliza cookies. La navegación es segura mediante HTTPS. Si nos contactas por WhatsApp, tu información será tratada con confidencialidad y no será compartida ni almacenada fuera del canal de atención.</p>
@@ -202,25 +251,33 @@
   <p>Los pedidos se gestionan por WhatsApp. Los precios y condiciones se acuerdan individualmente. Nos reservamos el derecho de actualizar el contenido del sitio sin previo aviso.</p>
 </section>
 
-<footer style="background: #222; color: #fff; text-align: center; padding: 20px;">
-  <div class="footer-links" style="margin-bottom: 10px;">
-    <a href="javascript:void(0)" onclick="mostrarSeccion('politica')" style="color: #fff; text-decoration: none; margin-right: 10px;">🔒 Política de Privacidad</a>
-    <a href="javascript:void(0)" onclick="mostrarSeccion('terminos')" style="color: #fff; text-decoration: none;">📄 Términos y Condiciones</a>
-  </div>
-  <div class="social-icons" style="margin-bottom: 10px;">
-    <a href="https://www.instagram.com/pauldesigncol/" target="_blank">
-      <img src="icons/instagram.svg" alt="Instagram" style="width: 20px; height: 20px; margin: 0 5px;" />
-    </a>
-    <a href="https://www.facebook.com/profile.php?id=61566438401213" target="_blank">
-      <img src="icons/facebook.svg" alt="Facebook" style="width: 20px; height: 20px; margin: 0 5px;" />
-    </a>
-    <a href="https://www.tiktok.com/@pauldesigncol" target="_blank">
-      <img src="icons/tiktok.svg" alt="TikTok" style="width: 20px; height: 20px; margin: 0 5px;" />
-    </a>
+<!-- Botones flotantes -->
+<div class="social-floating">
+  <a href="https://www.instagram.com/pauldesigncol/" target="_blank" title="Instagram">
+    <img src="icons/instagram.svg" alt="Instagram" />
+  </a>
+  <a href="https://www.facebook.com/profile.php?id=61566438401213" target="_blank" title="Facebook">
+    <img src="icons/facebook.svg" alt="Facebook" />
+  </a>
+  <a href="https://www.tiktok.com/@pauldesigncol" target="_blank" title="TikTok">
+    <img src="icons/tiktok.svg" alt="TikTok" />
+  </a>
+</div>
+
+<a class="whatsapp" href="https://wa.me/573178052836?text=Hola%20Paul,%20quiero%20personalizar%20un%20producto" target="_blank" title="WhatsApp Business">
+  <img src="icons/whatsapp-business.svg" alt="WhatsApp Business" />
+</a>
+
+<!-- Footer -->
+<footer>
+  <div>
+    <a href="javascript:void(0)" onclick="mostrarSeccion('politica')">🔒 Política de Privacidad</a>
+    <a href="javascript:void(0)" onclick="mostrarSeccion('terminos')">📄 Términos y Condiciones</a>
   </div>
   <p>📍 Bogotá, Colombia · &copy; 2025 Paul Design COL</p>
 </footer>
 
+<!-- Scripts -->
 <script>
   function toggleMenu() {
     const menu = document.getElementById("menu");
