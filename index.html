@@ -14,20 +14,23 @@
       color: #333;
     }
 
-    header {
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background: #222;
       color: #fff;
-      padding: 20px;
-      text-align: center;
+      padding: 10px 20px;
+    }
+
+    .top-bar h1 {
+      font-size: 20px;
+      margin: 0;
     }
 
     .menu-toggle {
       font-size: 28px;
-      padding: 10px 20px;
       cursor: pointer;
-      background: #222;
-      color: #fff;
-      text-align: right;
     }
 
     .menu-desplegable {
@@ -77,9 +80,10 @@
       background: #fff;
     }
 
-    .slider {
+    .slider-productos,
+    .slider-disenos {
       display: flex;
-      animation: deslizar 12s infinite linear;
+      animation: deslizar 20s infinite linear;
     }
 
     .placeholder {
@@ -107,17 +111,10 @@
       align-items: center;
     }
 
-    .overlay-box {
+    .overlay img {
       width: 40%;
-      height: 150px;
-      background: rgba(0,0,0,0.05);
-      border: 2px solid #25D366;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 16px;
-      animation: pausa 12s infinite ease-in-out;
+      opacity: 0.85;
+      animation: pausa 20s infinite ease-in-out;
     }
 
     @keyframes deslizar {
@@ -138,8 +135,13 @@
       right: 20px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
       z-index: 998;
+    }
+
+    .social-floating img {
+      width: 32px;
+      height: 32px;
     }
 
     .whatsapp {
@@ -159,8 +161,7 @@
       z-index: 999;
     }
 
-    .whatsapp img,
-    .social-floating img {
+    .whatsapp img {
       width: 100%;
       height: 100%;
       object-fit: contain;
@@ -187,24 +188,11 @@
   </style>
 </head>
 <body>
-<!-- Carrusel animado con recuadros blancos -->
-<div class="mockup-slider">
-  <div class="slider">
-    <div class="placeholder">Producto 1</div>
-    <div class="placeholder">Producto 2</div>
-    <div class="placeholder">Producto 3</div>
-  </div>
-  <div class="overlay">
-    <div class="overlay-box">Diseño del usuario</div>
-  </div>
+<div class="top-bar">
+  <h1>Paul Design COL</h1>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </div>
 
-<header>
-  <h1>Paul Design COL</h1>
-  <p>Personalización profesional desde Bogotá</p>
-</header>
-
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 <nav class="menu-desplegable" id="menu">
   <ul>
     <li><a href="javascript:void(0)" onclick="mostrarSeccion('camisetas')">👕 Camisetas y Buzos</a></li>
@@ -214,6 +202,18 @@
     <li><a href="javascript:void(0)" onclick="mostrarSeccion('vinilo')">🎨 Vinilo Textil</a></li>
   </ul>
 </nav>
+
+<!-- Carrusel doble banda -->
+<div class="mockup-slider">
+  <div class="slider-productos">
+    <div class="placeholder">Producto 1</div>
+    <div class="placeholder">Producto 2</div>
+    <div class="placeholder">Producto 3</div>
+  </div>
+  <div class="overlay">
+    <img src="img/diseno1.png" alt="Diseño del usuario" />
+  </div>
+</div>
 
 <section id="camisetas" class="seccion">
   <h2>👕 Camisetas y Buzos</h2>
@@ -243,12 +243,18 @@
   <h2>Política de Privacidad</h2>
   <p>Este sitio no recopila datos personales ni utiliza cookies. La navegación es segura mediante HTTPS. Si nos contactas por WhatsApp, tu información será tratada con confidencialidad y no será compartida ni almacenada fuera del canal de atención.</p>
   <p>Las imágenes proporcionadas por el cliente se usan exclusivamente para el producto solicitado. No se almacenan ni reutilizan sin autorización.</p>
+  <p>Paul Design COL no utiliza formularios, bases de datos ni sistemas de registro. Toda la comunicación se realiza directamente por WhatsApp Business, lo que garantiza un canal único y transparente.</p>
+  <p>Los datos visibles en redes sociales (como nombre, perfil o imagen) no son recopilados ni analizados por este sitio. No se realiza ningún tipo de seguimiento ni análisis de comportamiento.</p>
+  <p>La seguridad del sitio está reforzada mediante cifrado SSL y navegación directa sin intermediarios. No se integran servicios externos que puedan comprometer la privacidad del visitante.</p>
 </section>
 
 <section id="terminos" class="seccion">
   <h2>Términos y Condiciones</h2>
-  <p>Paul Design COL ofrece productos personalizados desde Bogotá, Colombia. El cliente es responsable de los derechos de uso de imágenes o logotipos que solicita. No se reproducen marcas registradas sin autorización.</p>
-  <p>Los pedidos se gestionan por WhatsApp. Los precios y condiciones se acuerdan individualmente. Nos reservamos el derecho de actualizar el contenido del sitio sin previo aviso.</p>
+  <p>Paul Design COL ofrece productos personalizados desde Bogotá, Colombia. El cliente es responsable de los derechos de uso de imágenes, logotipos o frases que solicita. No se reproducen marcas registradas sin autorización expresa.</p>
+  <p>Los pedidos se gestionan exclusivamente por WhatsApp Business. Cada solicitud se atiende de forma individual, y los precios se definen según el tipo de producto, técnica de personalización y cantidad.</p>
+  <p>Las imágenes enviadas por el cliente se usan únicamente para el producto solicitado. No se almacenan ni se reutilizan en otros pedidos sin autorización.</p>
+  <p>Los tiempos de entrega, condiciones de pago y opciones de envío se acuerdan directamente con el cliente. No se realizan transacciones automatizadas ni pagos en línea desde este sitio.</p>
+  <p>Paul Design COL se reserva el derecho de actualizar los contenidos del sitio, incluyendo imágenes, textos y condiciones, sin previo aviso. El uso del sitio implica la aceptación de estos términos.</p>
 </section>
 
 <!-- Botones flotantes -->
