@@ -13,21 +13,18 @@
       background: #f4f4f4;
       color: #333;
     }
-
     header {
       background: #222;
       color: #fff;
       padding: 20px;
       text-align: center;
     }
-
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       padding: 20px;
     }
-
     .product {
       background: #fff;
       border-radius: 8px;
@@ -37,181 +34,47 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       text-align: center;
     }
-
     .product img {
       width: 100%;
       border-radius: 4px;
     }
-
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 48px;
-      height: 48px;
-      background: #25D366;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      animation: pulse 2.5s infinite;
-    }
-
-    .whatsapp img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .whatsapp:hover {
-      transform: scale(1.1);
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-      100% { transform: scale(1); }
-    }
-
-    footer {
+    .menu-principal {
       background: #222;
-      color: #fff;
+      padding: 10px 0;
       text-align: center;
-      padding: 20px;
     }
-
-    .social-icons a {
-      margin: 0 10px;
+    .menu-principal ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .menu-principal li {
+      margin: 5px 10px;
+    }
+    .menu-principal a {
       color: #fff;
       text-decoration: none;
-      font-size: 18px;
-      display: inline-flex;
-      align-items: center;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background 0.3s;
     }
-
-    .social-icons img {
-      width: 20px;
-      height: 20px;
-      margin-right: 6px;
-      object-fit: contain;
+    .menu-principal a:hover {
+      background: #444;
     }
-
-    .social-floating {
-      position: fixed;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 999;
-    }
-
-    .social-floating a {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      padding: 0;
-    }
-
-    .social-floating img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .social-floating a:hover {
-      transform: scale(1.1);
-    }
-
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 22px;
-      }
-
-      header p {
-        font-size: 16px;
-      }
-
-      .gallery {
+      .menu-principal ul {
         flex-direction: column;
         align-items: center;
-        padding: 10px;
       }
-
-      .product {
+      .menu-principal a {
+        display: block;
         width: 90%;
-        max-width: 300px;
-        margin: 10px auto;
-      }
-
-      .social-floating {
-        position: fixed;
-        bottom: 80px; /* justo encima del botón de WhatsApp */
-        right: 20px;
-        top: auto;
-        transform: none;
-        flex-direction: column; /* vertical */
-        gap: 8px;
-      }
-
-      .social-floating a {
-        width: 36px;
-        height: 36px;
-      }
-
-      .whatsapp {
-        bottom: 20px;
-        right: 20px;
-        width: 48px;
-        height: 48px;
-      }
-
-      .whatsapp img,
-      .social-floating img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-
-      footer {
-        padding: 15px;
-        font-size: 14px;
-      }
-
-      .social-icons a {
-        font-size: 16px;
-      }
-
-      .social-icons img {
-        width: 18px;
-        height: 18px;
-        margin-right: 4px;
-      }
-
-      section#politica,
-      section#terminos {
-        padding: 15px;
-      }
-
-      section h2 {
-        font-size: 18px;
-      }
-
-      section p {
-        font-size: 14px;
-        line-height: 1.5;
+        margin: 5px 0;
+        background: #333;
       }
     }
   </style>
@@ -234,9 +97,70 @@
   </div>
 </section>
 
-<a class="whatsapp" href="https://wa.me/573178052836?text=Hola%20Paul,%20quiero%20personalizar%20una%20camiseta" target="_blank" title="WhatsApp Business">
+<nav class="menu-principal">
+  <ul>
+    <li><a href="#camisetas">Camisetas y Buzos</a></li>
+    <li><a href="#mugs">Mugs y Termos</a></li>
+    <li><a href="#bordado">Bordado 10×10</a></li>
+    <li><a href="#fotografia">Fotografía Impresa</a></li>
+    <li><a href="#vinilo">Vinilo Textil</a></li>
+  </ul>
+</nav>
+<section id="camisetas">
+  <h2>Camisetas y Buzos</h2>
+  <p>Personalización con vinilo textil, impresión directa o bordado. Ideal para eventos, marcas o regalos únicos.</p>
+</section>
+
+<section id="mugs">
+  <h2>Mugs y Termos</h2>
+  <p>Sublimación con tinta Epson F170 y horno de convección. Alta calidad y durabilidad para uso diario o corporativo.</p>
+</section>
+
+<section id="bordado">
+  <h2>Bordado 10×10</h2>
+  <p>Aplicación profesional con Brother SE700. Logos, nombres o detalles decorativos sobre buzos, camisetas y más.</p>
+</section>
+
+<section id="fotografia">
+  <h2>Fotografía Impresa</h2>
+  <p>Impresión sobre tela, papel o productos personalizados. Ideal para recuerdos, decoración o regalos creativos.</p>
+</section>
+
+<section id="vinilo">
+  <h2>Vinilo Textil</h2>
+  <p>Corte preciso con Silhouette Cameo 5. Aplicación sobre textiles con plancha térmica 38×38 para acabados impecables.</p>
+</section>
+
+<a class="whatsapp" href="https://wa.me/573178052836?text=Hola%20Paul,%20quiero%20personalizar%20un%20producto" target="_blank" title="WhatsApp Business">
   <img src="icons/whatsapp-business.svg" alt="WhatsApp Business" />
 </a>
+<div class="social-floating">
+  <a href="https://www.instagram.com/pauldesigncol/" target="_blank" title="Instagram">
+    <img src="icons/instagram.svg" alt="Instagram" />
+  </a>
+  <a href="https://www.facebook.com/profile.php?id=61566438401213" target="_blank" title="Facebook">
+    <img src="icons/facebook.svg" alt="Facebook" />
+  </a>
+  <a href="https://www.tiktok.com/@pauldesigncol" target="_blank" title="TikTok">
+    <img src="icons/tiktok.svg" alt="TikTok" />
+  </a>
+</div>
+
+<section id="politica" style="padding: 20px; background: #fff;">
+  <h2>Política de Privacidad</h2>
+  <p>En Paul Design COL valoramos profundamente tu privacidad. Este sitio web no recopila datos personales de forma automática ni utiliza cookies, formularios o sistemas de rastreo. Toda la navegación se realiza de forma segura mediante protocolo HTTPS.</p>
+  <p>Si decides contactarnos por WhatsApp, la conversación será gestionada de forma privada entre tú y nuestro equipo. No almacenamos ni compartimos tus datos personales fuera del canal de atención, y solo se utilizarán para responder tus solicitudes o gestionar pedidos.</p>
+  <p>Como empresa de personalización, trabajamos con imágenes, logotipos y diseños que pueden ser proporcionados directamente por el cliente. Estas imágenes se utilizan exclusivamente para el producto solicitado, no se almacenan ni reutilizan sin autorización, y no se comparten con terceros ni se publican sin consentimiento previo.</p>
+  <p>No vendemos, alquilamos ni divulgamos tus datos personales. No realizamos campañas automatizadas ni enviamos correos masivos. Toda la información que compartas será tratada con confidencialidad y respeto.</p>
+</section>
+
+<section id="terminos" style="padding: 20px; background: #f9f9f9;">
+  <h2>Términos y Condiciones</h2>
+  <p>Paul Design COL ofrece productos personalizados como camisetas, buzos, mugs, termos, bordados, vinilos y fotografía impresa, elaborados desde Bogotá, Colombia. Las imágenes, diseños y textos propios del sitio son propiedad de la marca y no pueden ser reproducidos sin autorización.</p>
+  <p>Algunos diseños utilizados pueden incluir imágenes, logotipos o elementos gráficos que no fueron creados por nuestro equipo, sino que han sido proporcionados, sugeridos o solicitados directamente por el cliente. El cliente declara tener los derechos, permisos o autorización para utilizar dichas imágenes.</p>
+  <p>Paul Design COL no se responsabiliza por el uso no autorizado de marcas registradas, personajes, logotipos o cualquier contenido protegido por derechos de autor. Nuestro servicio se limita a la mejora, adaptación o aplicación técnica de los elementos gráficos proporcionados por el usuario.</p>
+  <p>Los pedidos se gestionan directamente por WhatsApp. Los precios, tiempos de entrega y condiciones específicas se acuerdan individualmente con cada cliente. Nos reservamos el derecho de actualizar los contenidos del sitio sin previo aviso para mejorar la experiencia y la calidad del servicio.</p>
+</section>
 
 <footer>
   <p>📍 Bogotá, Colombia</p>
@@ -258,34 +182,5 @@
   <p>&copy; 2025 Paul Design COL</p>
 </footer>
 
-<section id="politica" style="padding: 20px; background: #fff;">
-  <h2>Política de Privacidad</h2>
-  <p>En Paul Design COL valoramos profundamente tu privacidad. Este sitio web no recopila datos personales de forma automática ni utiliza cookies, formularios o sistemas de rastreo. Toda la navegación se realiza de forma segura mediante protocolo HTTPS.</p>
-  <p>Si decides contactarnos por WhatsApp, la conversación será gestionada de forma privada entre tú y nuestro equipo. No almacenamos ni compartimos tus datos personales fuera del canal de atención, y solo se utilizarán para responder tus solicitudes o gestionar pedidos.</p>
-  <p>Como empresa de personalización, trabajamos con imágenes, logotipos y diseños que pueden ser proporcionados directamente por el cliente. Estas imágenes se utilizan exclusivamente para el producto solicitado, no se almacenan ni reutilizan sin autorización, y no se comparten con terceros ni se publican sin consentimiento previo.</p>
-  <p>No vendemos, alquilamos ni divulgamos tus datos personales. No realizamos campañas automatizadas ni enviamos correos masivos. Toda la información que compartas será tratada con confidencialidad y respeto.</p>
-</section>
-
-
-<section id="terminos" style="padding: 20px; background: #f9f9f9;">
-  <h2>Términos y Condiciones</h2>
-  <p>Paul Design COL ofrece productos personalizados como camisetas, buzos, mugs, termos, bordados, vinilos y fotografía impresa, elaborados desde Bogotá, Colombia. Las imágenes, diseños y textos propios del sitio son propiedad de la marca y no pueden ser reproducidos sin autorización.</p>
-  <p>Algunos diseños utilizados pueden incluir imágenes, logotipos o elementos gráficos que no fueron creados por nuestro equipo, sino que han sido proporcionados, sugeridos o solicitados directamente por el cliente. El cliente declara tener los derechos, permisos o autorización para utilizar dichas imágenes.</p>
-  <p>Paul Design COL no se responsabiliza por el uso no autorizado de marcas registradas, personajes, logotipos o cualquier contenido protegido por derechos de autor. Nuestro servicio se limita a la mejora, adaptación o aplicación técnica de los elementos gráficos proporcionados por el usuario.</p>
-  <p>Los pedidos se gestionan directamente por WhatsApp. Los precios, tiempos de entrega y condiciones específicas se acuerdan individualmente con cada cliente. Nos reservamos el derecho de actualizar los contenidos del sitio sin previo aviso para mejorar la experiencia y la calidad del servicio.</p>
-</section>
-
-
-<div class="social-floating">
-  <a href="https://www.instagram.com/pauldesigncol/" target="_blank" title="Instagram">
-    <img src="icons/instagram.svg" alt="Instagram" />
-  </a>
-  <a href="https://www.facebook.com/profile.php?id=61566438401213" target="_blank" title="Facebook">
-    <img src="icons/facebook.svg" alt="Facebook" />
-  </a>
-  <a href="https://www.tiktok.com/@pauldesigncol" target="_blank" title="TikTok">
-    <img src="icons/tiktok.svg" alt="TikTok" />
-  </a>
-</div>
 </body>
 </html>
