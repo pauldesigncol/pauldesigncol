@@ -58,26 +58,13 @@
       color: #25D366;
     }
 
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .seccion {
+      display: none;
       padding: 20px;
     }
 
-    .product {
-      background: #fff;
-      border-radius: 8px;
-      margin: 10px;
-      padding: 10px;
-      width: 200px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    .product img {
-      width: 100%;
-      border-radius: 4px;
+    .seccion.activa {
+      display: block;
     }
 
     .whatsapp {
@@ -137,94 +124,55 @@
       50% { transform: scale(1.08); }
       100% { transform: scale(1); }
     }
-
-    @media (max-width: 600px) {
-      .gallery {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-      }
-
-      .product {
-        width: 90%;
-        max-width: 300px;
-        margin: 10px auto;
-      }
-
-      .social-floating {
-        bottom: 80px;
-        right: 20px;
-        top: auto;
-        transform: none;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .social-floating a {
-        width: 36px;
-        height: 36px;
-      }
-
-      .whatsapp {
-        bottom: 20px;
-        right: 20px;
-        width: 48px;
-        height: 48px;
-      }
-    }
   </style>
 </head>
 <body>
 
 <header>
   <h1>Paul Design COL</h1>
-  <p>Camisetas personalizadas con estilo profesional</p>
+  <p>Personalización profesional desde Bogotá</p>
 </header>
 
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 <nav class="menu-desplegable" id="menu">
   <ul>
-    <li><a href="#camisetas">👕 Camisetas y Buzos</a></li>
-    <li><a href="#mugs">☕ Mugs y Termos</a></li>
-    <li><a href="#bordado">🧵 Bordado 10×10</a></li>
-    <li><a href="#fotografia">📸 Fotografía Impresa</a></li>
-    <li><a href="#vinilo">🎨 Vinilo Textil</a></li>
+    <li><a href="javascript:void(0)" onclick="mostrarSeccion('camisetas')">👕 Camisetas y Buzos</a></li>
+    <li><a href="javascript:void(0)" onclick="mostrarSeccion('mugs')">☕ Mugs y Termos</a></li>
+    <li><a href="javascript:void(0)" onclick="mostrarSeccion('bordado')">🧵 Bordado 10×10</a></li>
+    <li><a href="javascript:void(0)" onclick="mostrarSeccion('fotografia')">📸 Fotografía Impresa</a></li>
+    <li><a href="javascript:void(0)" onclick="mostrarSeccion('vinilo')">🎨 Vinilo Textil</a></li>
+    <li><a href="javascript:void(0)" onclick="mostrarSeccion('politica')">🔒 Política de Privacidad</a></li>
+    <li><a href="javascript:void(0)" onclick="mostrarSeccion('terminos')">📄 Términos y Condiciones</a></li>
   </ul>
 </nav>
-
-<section class="gallery">
-  <div class="product">
-    <img src="camiseta1.jpg" alt="Camiseta personalizada" />
-    <p>Camiseta Bogotá Style</p>
-  </div>
-  <div class="product">
-    <img src="camiseta2.jpg" alt="Camiseta personalizada" />
-    <p>Camiseta Creativa</p>
-  </div>
-</section>
-<section id="camisetas">
+<section id="camisetas" class="seccion">
   <h2>👕 Camisetas y Buzos</h2>
-  <p>Personalización con vinilo textil, impresión directa o bordado. Ideal para eventos, marcas o regalos únicos.</p>
+  <img src="camiseta1.jpg" alt="Camiseta personalizada" />
+  <p>Diseños que hablan por ti. Personalizamos cada prenda con vinilo textil, impresión directa o bordado.</p>
 </section>
 
-<section id="mugs">
+<section id="mugs" class="seccion">
   <h2>☕ Mugs y Termos</h2>
-  <p>Sublimación con tinta Epson F170 y horno de convección. Alta calidad y durabilidad para uso diario o corporativo.</p>
+  <img src="mug1.jpg" alt="Mug personalizado" />
+  <p>Sublimación profesional con tinta Epson F170 y horno de convección. Alta calidad y durabilidad.</p>
 </section>
 
-<section id="bordado">
+<section id="bordado" class="seccion">
   <h2>🧵 Bordado 10×10</h2>
-  <p>Aplicación profesional con Brother SE700. Logos, nombres o detalles decorativos sobre buzos, camisetas y más.</p>
+  <img src="bordado1.jpg" alt="Bordado personalizado" />
+  <p>Aplicación profesional con Brother SE700. Logos, nombres o detalles decorativos sobre buzos y camisetas.</p>
 </section>
 
-<section id="fotografia">
+<section id="fotografia" class="seccion">
   <h2>📸 Fotografía Impresa</h2>
-  <p>Impresión sobre tela, papel o productos personalizados. Ideal para recuerdos, decoración o regalos creativos.</p>
+  <img src="foto1.jpg" alt="Fotografía impresa" />
+  <p>Impresión sobre tela, papel o productos personalizados. Ideal para recuerdos y decoración creativa.</p>
 </section>
 
-<section id="vinilo">
+<section id="vinilo" class="seccion">
   <h2>🎨 Vinilo Textil</h2>
-  <p>Corte preciso con Silhouette Cameo 5. Aplicación sobre textiles con plancha térmica 38×38 para acabados impecables.</p>
+  <img src="vinilo1.jpg" alt="Vinilo textil" />
+  <p>Corte preciso con Silhouette Cameo 5. Aplicación sobre textiles con plancha térmica para acabados impecables.</p>
 </section>
 
 <a class="whatsapp" href="https://wa.me/573178052836?text=Hola%20Paul,%20quiero%20personalizar%20un%20producto" target="_blank" title="WhatsApp Business">
@@ -242,20 +190,22 @@
     <img src="icons/tiktok.svg" alt="TikTok" />
   </a>
 </div>
-<section id="politica" style="padding: 20px; background: #fff;">
-  <h2>🔒 Política de Privacidad</h2>
+<section id="politica" class="seccion">
+  <h2>Política de Privacidad</h2>
   <p>Este sitio no recopila datos personales ni utiliza cookies. La navegación es segura mediante HTTPS. Si nos contactas por WhatsApp, tu información será tratada con confidencialidad y no será compartida ni almacenada fuera del canal de atención.</p>
+  <p>Las imágenes proporcionadas por el cliente se usan exclusivamente para el producto solicitado. No se almacenan ni reutilizan sin autorización.</p>
 </section>
 
-<section id="terminos" style="padding: 20px; background: #f9f9f9;">
-  <h2>📄 Términos y Condiciones</h2>
+<section id="terminos" class="seccion">
+  <h2>Términos y Condiciones</h2>
   <p>Paul Design COL ofrece productos personalizados desde Bogotá, Colombia. El cliente es responsable de los derechos de uso de imágenes o logotipos que solicita. No se reproducen marcas registradas sin autorización.</p>
+  <p>Los pedidos se gestionan por WhatsApp. Los precios y condiciones se acuerdan individualmente. Nos reservamos el derecho de actualizar el contenido del sitio sin previo aviso.</p>
 </section>
 
 <footer style="background: #222; color: #fff; text-align: center; padding: 20px;">
   <div class="footer-links" style="margin-bottom: 10px;">
-    <a href="#politica" style="color: #fff; text-decoration: none; margin-right: 10px;">🔒 Política de Privacidad</a>
-    <a href="#terminos" style="color: #fff; text-decoration: none;">📄 Términos y Condiciones</a>
+    <a href="javascript:void(0)" onclick="mostrarSeccion('politica')" style="color: #fff; text-decoration: none; margin-right: 10px;">🔒 Política de Privacidad</a>
+    <a href="javascript:void(0)" onclick="mostrarSeccion('terminos')" style="color: #fff; text-decoration: none;">📄 Términos y Condiciones</a>
   </div>
   <div class="social-icons" style="margin-bottom: 10px;">
     <a href="https://www.instagram.com/pauldesigncol/" target="_blank">
@@ -275,6 +225,14 @@
   function toggleMenu() {
     const menu = document.getElementById("menu");
     menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  function mostrarSeccion(id) {
+    const secciones = document.querySelectorAll('.seccion');
+    secciones.forEach(sec => sec.classList.remove('activa'));
+    const activa = document.getElementById(id);
+    if (activa) activa.classList.add('activa');
+    document.getElementById("menu").style.display = "none";
   }
 </script>
 
