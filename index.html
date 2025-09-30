@@ -7,6 +7,10 @@
   <link rel="icon" href="img/milo-logo.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Montserrat', sans-serif;
       margin: 0;
@@ -26,7 +30,11 @@
     }
 
     .top-bar img {
-      height: 40px;
+      max-height: 40px;
+      height: auto;
+      width: auto;
+      object-fit: contain;
+      display: block;
     }
 
     .top-bar h1 {
@@ -104,9 +112,78 @@
     .overlay img {
       max-width: 60%;
       height: auto;
+      object-fit: contain;
       opacity: 0.85;
+      display: block;
+      margin: 0 auto;
     }
-</style>
+
+    .seccion {
+      display: none;
+      padding: 20px;
+    }
+
+    .seccion.activa {
+      display: block;
+    }
+
+    .social-floating {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 998;
+    }
+
+    .social-floating img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 48px;
+      height: 48px;
+      background: #25D366;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse 2.5s infinite;
+      z-index: 999;
+    }
+
+    .whatsapp img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: #FFD700;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
 </head>
 <body>
 <div class="top-bar">
@@ -127,7 +204,7 @@
 
 <!-- Banda Mug -->
 <div class="mockup-slider">
-  <img src="img/productos/mug1.jpg" alt="Mug personalizado" />
+  <img src="img/productos/producto1.jpg" alt="Mug personalizado" />
   <div class="overlay">
     <img src="img/diseno/diseno-mug.png" alt="Diseño aplicado en mug" />
   </div>
@@ -135,7 +212,7 @@
 
 <!-- Banda Gorra -->
 <div class="mockup-slider">
-  <img src="img/productos/gorra1.jpg" alt="Gorra personalizada" />
+  <img src="img/productos/producto2.jpg" alt="Gorra personalizada" />
   <div class="overlay">
     <img src="img/diseno/diseno-gorra.png" alt="Diseño aplicado en gorra" />
   </div>
@@ -143,36 +220,12 @@
 
 <!-- Banda Camiseta -->
 <div class="mockup-slider">
-  <img src="img/productos/camiseta1.jpg" alt="Camiseta personalizada" />
+  <img src="img/productos/producto3.jpg" alt="Camiseta personalizada" />
   <div class="overlay">
     <img src="img/diseno/diseno-camiseta.png" alt="Diseño aplicado en camiseta" />
   </div>
 </div>
-<section id="camisetas" class="seccion">
-  <h2>👕 Camisetas y Buzos</h2>
-  <p>Diseños que hablan por ti. Personalizamos cada prenda con vinilo textil, impresión directa o bordado.</p>
-</section>
-
-<section id="mugs" class="seccion">
-  <h2>☕ Mugs y Termos</h2>
-  <p>Sublimación profesional con tinta Epson F170 y horno de convección. Alta calidad y durabilidad.</p>
-</section>
-
-<section id="gorras" class="seccion">
-  <h2>🧢 Gorras Personalizadas</h2>
-  <p>Aplicación de diseño sobre gorras tipo trucker, planas o deportivas. Corte preciso y acabado profesional.</p>
-</section>
-
-<section id="bordado" class="seccion">
-  <h2>🧵 Bordado 10×10</h2>
-  <p>Aplicación profesional con Brother SE700. Logos, nombres o detalles decorativos sobre buzos y camisetas.</p>
-</section>
-
-<section id="vinilo" class="seccion">
-  <h2>🎨 Vinilo Textil</h2>
-  <p>Corte preciso con Silhouette Cameo 5. Aplicación sobre textiles con plancha térmica para acabados impecables.</p>
-</section>
-
+<!-- Secciones legales -->
 <section id="politica" class="seccion">
   <h2>Política de Privacidad</h2>
   <p>Este sitio no recopila datos personales ni utiliza cookies. La navegación es segura mediante HTTPS. Si nos contactas por WhatsApp, tu información será tratada con confidencialidad y no será compartida ni almacenada fuera del canal de atención.</p>
@@ -209,6 +262,7 @@
 <a class="whatsapp" href="https://wa.me/573178052836?text=Hola%20Paul,%20quiero%20personalizar%20un%20producto" target="_blank" title="WhatsApp Business">
   <img src="icons/whatsapp-business.svg" alt="WhatsApp Business" />
 </a>
+
 <!-- Footer -->
 <footer>
   <div>
@@ -238,7 +292,6 @@
     if (seccion) seccion.classList.remove('activa');
   }
 
-  // Cierre automático del menú al hacer clic fuera
   document.addEventListener("click", function(event) {
     const menu = document.getElementById("menu");
     const toggle = document.querySelector(".menu-toggle");
