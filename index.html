@@ -236,7 +236,7 @@
             font-size: 0.95rem;
         }
 
-        /* SECCIÓN PROCESO - NUEVA */
+        /* SECCIÓN PROCESO */
         .proceso-section {
             padding: 80px 20px;
             background: var(--dark);
@@ -510,7 +510,7 @@
             font-size: 1.2rem;
         }
 
-        /* SECCIÓN COTIZACIÓN - NUEVA */
+        /* SECCIÓN COTIZACIÓN */
         .cotizacion-section {
             padding: 80px 20px;
             background: var(--darker);
@@ -581,33 +581,141 @@
             box-shadow: 0 5px 15px rgba(255,215,0,0.3);
         }
 
-        /* Botón WhatsApp Mejorado - NUEVO */
-        .whatsapp-chat {
+        /* SECCIÓN CONTACTO COMPLETO - NUEVA */
+        .contacto-completo {
+            padding: 80px 20px;
+            background: var(--dark);
+        }
+
+        .opciones-contacto {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .opcion-contacto {
+            background: var(--gray);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            border-top: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .opcion-contacto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255,215,0,0.1);
+        }
+
+        .opcion-contacto i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .opcion-contacto h3 {
+            color: var(--light);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .opcion-contacto p {
+            color: #ccc;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .btn-contacto {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--darker);
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-contacto:hover {
+            background: var(--secondary);
+            color: var(--light);
+            transform: translateY(-2px);
+        }
+
+        /* CHATBOT - NUEVO */
+        .chatbot-simple {
             position: fixed;
             bottom: 100px;
-            left: 30px;
-            background: #25D366;
+            left: 20px;
+            z-index: 999;
+        }
+
+        .chatbot-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             padding: 15px 20px;
             border-radius: 50px;
             display: flex;
             align-items: center;
             gap: 10px;
-            text-decoration: none;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-            z-index: 999;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
             transition: var(--transition);
-            animation: pulse 2s infinite;
-        }
-
-        .whatsapp-chat:hover {
-            transform: scale(1.05);
-            animation: none;
-        }
-
-        .whatsapp-chat span {
             font-weight: 600;
-            font-size: 0.9rem;
+        }
+
+        .chatbot-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .chatbot-options {
+            position: absolute;
+            bottom: 70px;
+            left: 0;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+            min-width: 250px;
+            border: 2px solid #667eea;
+        }
+
+        .chatbot-options.active {
+            display: block;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-option {
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            color: #333;
+            font-weight: 500;
+            border: 1px solid #e9ecef;
+        }
+
+        .chat-option:hover {
+            background: #667eea;
+            color: white;
+            transform: translateX(5px);
         }
 
         /* Botones Flotantes Mejorados */
@@ -726,12 +834,42 @@
             color: var(--light);
         }
 
-        /* Footer */
+        /* Footer Mejorado */
         .footer {
             background: var(--dark);
             padding: 50px 20px 30px;
             text-align: center;
             border-top: 1px solid var(--gray);
+        }
+
+        .footer-contacto {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .contacto-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .contacto-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .contacto-info h4 {
+            color: var(--light);
+            margin-bottom: 5px;
+        }
+
+        .contacto-info p {
+            color: #ccc;
+            font-size: 0.9rem;
         }
 
         .footer-links {
@@ -813,14 +951,23 @@
                 grid-template-columns: 1fr;
             }
 
-            .whatsapp-chat {
-                left: 20px;
-                bottom: 90px;
-                padding: 12px 15px;
+            .opciones-contacto {
+                grid-template-columns: 1fr;
             }
 
-            .whatsapp-chat span {
-                font-size: 0.8rem;
+            .chatbot-simple {
+                left: 15px;
+                bottom: 90px;
+            }
+
+            .chatbot-btn {
+                padding: 12px 18px;
+                font-size: 0.9rem;
+            }
+
+            .chatbot-options {
+                min-width: 220px;
+                left: -10px;
             }
 
             .social-floating {
@@ -831,6 +978,12 @@
             .whatsapp-float {
                 bottom: 20px;
                 right: 20px;
+                width: 60px;
+                height: 60px;
+            }
+
+            .footer-contacto {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -857,14 +1010,13 @@
                 grid-template-columns: 1fr;
             }
 
-            .whatsapp-chat {
-                left: 10px;
-                bottom: 80px;
-                padding: 10px 12px;
+            .chatbot-btn span {
+                display: none;
             }
 
-            .whatsapp-chat span {
-                display: none;
+            .chatbot-btn {
+                padding: 15px;
+                border-radius: 50%;
             }
         }
     </style>
@@ -889,7 +1041,7 @@
                 <li><a href="#proceso" class="nav-link">Proceso</a></li>
                 <li><a href="#productos" class="nav-link">Productos</a></li>
                 <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
-                <li><a href="#cotizacion" class="nav-link">Cotización</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -927,7 +1079,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN PROCESO - NUEVA -->
+    <!-- SECCIÓN PROCESO -->
     <section class="proceso-section" id="proceso">
         <h2 class="section-title">Nuestro Proceso de Trabajo</h2>
         <div class="proceso-steps">
@@ -1075,7 +1227,34 @@
         </div>
     </section>
 
-    <!-- SECCIÓN COTIZACIÓN - NUEVA -->
+    <!-- SECCIÓN CONTACTO COMPLETO - NUEVA -->
+    <section class="contacto-completo" id="contacto">
+        <h2 class="section-title">Elige cómo contactarnos</h2>
+        <div class="opciones-contacto">
+            <div class="opcion-contacto">
+                <i class="fab fa-whatsapp"></i>
+                <h3>WhatsApp Rápido</h3>
+                <p>Para consultas inmediatas y cotizaciones express. Resuelve tus dudas al instante.</p>
+                <a href="https://wa.me/573178052836" class="btn-contacto">Chatear Ahora</a>
+            </div>
+            
+            <div class="opcion-contacto">
+                <i class="fas fa-envelope"></i>
+                <h3>Correo Electrónico</h3>
+                <p>Para proyectos detallados y envío de archivos. Ideal para briefs completos.</p>
+                <a href="mailto:paul.design.col@gmail.com" class="btn-contacto">Enviar Email</a>
+            </div>
+            
+            <div class="opcion-contacto">
+                <i class="fas fa-edit"></i>
+                <h3>Formulario Web</h3>
+                <p>Para solicitudes organizadas y seguimiento. Perfecto para cotizaciones formales.</p>
+                <a href="#cotizacion" class="btn-contacto">Llenar Formulario</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN COTIZACIÓN -->
     <section class="cotizacion-section" id="cotizacion">
         <h2 class="section-title">Solicita tu Cotización</h2>
         <div class="cotizacion-container">
@@ -1135,11 +1314,31 @@
         </div>
     </section>
 
-    <!-- Botón WhatsApp Mejorado - NUEVO -->
-    <a href="https://wa.me/573178052836?text=Hola%20Paul,%20tengo%20una%20pregunta%20sobre%20los%20diseños%20personalizados" class="whatsapp-chat" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-        <span>¿Necesitas ayuda?</span>
-    </a>
+    <!-- CHATBOT - NUEVO -->
+    <div class="chatbot-simple">
+        <div class="chatbot-btn">
+            <i class="fas fa-robot"></i>
+            <span>¿Tienes dudas?</span>
+        </div>
+        
+        <div class="chatbot-options">
+            <div class="chat-option" data-action="whatsapp" data-message="Hola Paul, quiero consultar precios de personalización">
+                💲 Consultar Precios
+            </div>
+            <div class="chat-option" data-action="whatsapp" data-message="Hola Paul, ¿qué técnicas de personalización tienen disponibles?">
+                🎨 Técnicas Disponibles
+            </div>
+            <div class="chat-option" data-action="whatsapp" data-message="Hola Paul, ¿cuál es el tiempo de entrega aproximado?">
+                ⏱ Tiempos de Entrega
+            </div>
+            <div class="chat-option" data-action="email" data-email="paul.design.col@gmail.com">
+                📧 Enviar Archivos por Correo
+            </div>
+            <div class="chat-option" data-action="whatsapp" data-message="Hola Paul, tengo una pregunta específica sobre un diseño">
+                💬 Otra Consulta
+            </div>
+        </div>
+    </div>
 
     <!-- Botones Flotantes -->
     <div class="social-floating">
@@ -1158,8 +1357,37 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Footer -->
-    <footer class="footer" id="contacto">
+    <!-- Footer Mejorado -->
+    <footer class="footer">
+        <div class="footer-contacto">
+            <div class="contacto-item">
+                <i class="fab fa-whatsapp"></i>
+                <div class="contacto-info">
+                    <h4>WhatsApp</h4>
+                    <p>+57 317 8052836</p>
+                    <small>Respuesta rápida</small>
+                </div>
+            </div>
+            
+            <div class="contacto-item">
+                <i class="fas fa-envelope"></i>
+                <div class="contacto-info">
+                    <h4>Correo Electrónico</h4>
+                    <p>paul.design.col@gmail.com</p>
+                    <small>Para archivos y proyectos</small>
+                </div>
+            </div>
+            
+            <div class="contacto-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="contacto-info">
+                    <h4>Ubicación</h4>
+                    <p>Bogotá, Colombia</p>
+                    <small>Envíos a todo el país</small>
+                </div>
+            </div>
+        </div>
+
         <div class="footer-links">
             <a class="footer-link" onclick="mostrarSeccion('politica')">Política de Privacidad</a>
             <a class="footer-link" onclick="mostrarSeccion('terminos')">Términos y Condiciones</a>
@@ -1237,6 +1465,44 @@
             
             // Limpiar formulario
             this.reset();
+        });
+
+        // CHATBOT functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatbotBtn = document.querySelector('.chatbot-btn');
+            const chatbotOptions = document.querySelector('.chatbot-options');
+            
+            // Toggle chatbot options
+            chatbotBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                chatbotOptions.classList.toggle('active');
+            });
+            
+            // Handle option clicks
+            document.querySelectorAll('.chat-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const action = this.getAttribute('data-action');
+                    const message = this.getAttribute('data-message');
+                    const email = this.getAttribute('data-email');
+                    
+                    if (action === 'whatsapp') {
+                        const url = `https://wa.me/573178052836?text=${encodeURIComponent(message)}`;
+                        window.open(url, '_blank');
+                    } else if (action === 'email') {
+                        window.location.href = `mailto:${email}?subject=Consulta Paul Design&body=Hola Paul, me interesa conocer más sobre tus servicios de diseño personalizado.`;
+                    }
+                    
+                    // Close options after selection
+                    chatbotOptions.classList.remove('active');
+                });
+            });
+            
+            // Close chatbot when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.chatbot-simple')) {
+                    chatbotOptions.classList.remove('active');
+                }
+            });
         });
 
         // Secciones legales
