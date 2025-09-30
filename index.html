@@ -1,582 +1,837 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paul Design COL - Diseño Personalizado</title>
-  <meta name="description" content="Diseños personalizados para camisetas, gorras, mugs y más. Personalización con bordado y vinilo textil en Bogotá.">
-  <link rel="icon" href="img/milo-logo.svg" type="image/svg+xml" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul Design COL - Diseño Personalizado Profesional</title>
+    <meta name="description" content="Diseños personalizados para camisetas, gorras, mugs. Bordado y vinilo textil en Bogotá. Calidad profesional garantizada.">
+    
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    :root {
-      --primary: #FFD700;
-      --secondary: #00BFFF;
-      --dark: #111;
-      --darker: #000;
-      --light: #fff;
-      --gray: #333;
-      --transition: all 0.3s ease;
-    }
+        :root {
+            --primary: #FFD700;
+            --secondary: #00BFFF;
+            --accent: #FF6B6B;
+            --dark: #1a1a1a;
+            --darker: #000;
+            --light: #ffffff;
+            --gray: #2d2d2d;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: var(--darker);
-      color: var(--light);
-      overflow-x: hidden;
-    }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--dark);
-      padding: 12px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1001;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
+        /* Header y Navegación Mejorada */
+        .header {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary);
+        }
 
-    .top-bar img {
-      max-height: 45px;
-      height: auto;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
 
-    .top-bar h1 {
-      font-size: 20px;
-      margin: 0;
-      color: var(--primary);
-      font-weight: 700;
-    }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
 
-    .menu-toggle {
-      font-size: 28px;
-      cursor: pointer;
-      color: var(--primary);
-      transition: var(--transition);
-    }
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
 
-    .menu-toggle:hover {
-      color: var(--secondary);
-    }
+        .logo-text {
+            color: var(--light);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
 
-    .menu-desplegable {
-      position: absolute;
-      top: 70px;
-      right: 20px;
-      background: var(--gray);
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
-      z-index: 1000;
-      display: none;
-      animation: fadeIn 0.3s ease;
-    }
+        .logo-highlight {
+            color: var(--primary);
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+        /* Menú Hamburguesa Profesional */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
 
-    .menu-desplegable ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: center;
-    }
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: var(--transition);
+            transform-origin: center;
+        }
 
-    .menu-desplegable li {
-      margin: 12px 0;
-    }
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
 
-    .menu-desplegable a {
-      color: var(--light);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-      transition: var(--transition);
-      display: block;
-      padding: 5px 10px;
-      border-radius: 4px;
-    }
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
 
-    .menu-desplegable a:hover {
-      color: var(--secondary);
-      background: rgba(255,255,255,0.1);
-    }
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
 
-    .hero {
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
-    }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
 
-    .hero h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-      color: var(--primary);
-    }
+        .nav-link {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: var(--transition);
+            position: relative;
+        }
 
-    .hero p {
-      font-size: 18px;
-      max-width: 600px;
-      margin: 0 auto 25px;
-      line-height: 1.6;
-    }
+        .nav-link:hover {
+            color: var(--primary);
+            background: rgba(255, 215, 0, 0.1);
+        }
 
-    .cta-button {
-      display: inline-block;
-      background: var(--primary);
-      color: var(--darker);
-      padding: 12px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
-      transition: var(--transition);
-      box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
-    }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
 
-    .cta-button:hover {
-      background: var(--secondary);
-      color: var(--light);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0, 191, 255, 0.4);
-    }
+        .nav-link:hover::after {
+            width: 80%;
+        }
 
-    .carrusel-container {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      margin: 40px auto;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
+            padding: 140px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .carrusel {
-      display: flex;
-      transition: transform 0.5s ease;
-      height: 500px;
-    }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
 
-    .carrusel-slide {
-      min-width: 100%;
-      position: relative;
-      height: 100%;
-    }
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
 
-    .carrusel-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: #ccc;
+            font-weight: 400;
+        }
 
-    .carrusel-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0,0,0,0.4);
-    }
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary), #FFA500);
+            color: var(--darker);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+        }
 
-    .carrusel-overlay img {
-      max-width: 60%;
-      max-height: 60%;
-      object-fit: contain;
-      opacity: 0;
-      transform: scale(0.8);
-      transition: all 0.8s ease;
-    }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
 
-    .carrusel-slide.active .carrusel-overlay img {
-      opacity: 0.9;
-      transform: scale(1);
-    }
+        /* Carrusel Mejorado */
+        .carrusel-section {
+            padding: 80px 20px;
+            background: var(--dark);
+        }
 
-    .carrusel-controls {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      padding: 0 20px;
-      z-index: 10;
-    }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
 
-    .carrusel-control {
-      background: rgba(0,0,0,0.6);
-      color: var(--light);
-      border: none;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      font-size: 24px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-    }
+        .carrusel-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
 
-    .carrusel-control:hover {
-      background: rgba(255,215,0,0.8);
-      color: var(--darker);
-    }
+        .carrusel {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 500px;
+        }
 
-    .carrusel-dots {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      z-index: 10;
-    }
+        .carrusel-slide {
+            min-width: 100%;
+            position: relative;
+        }
 
-    .carrusel-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.5);
-      border: none;
-      cursor: pointer;
-      transition: var(--transition);
-    }
+        .slide-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: linear-gradient(135deg, #333, #555);
+        }
 
-    .carrusel-dot.active {
-      background: var(--primary);
-      transform: scale(1.2);
-    }
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+        }
 
-    .social-floating {
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 998;
-    }
+        .slide-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
 
-    .social-floating a {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: var(--dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-    }
+        .slide-description {
+            font-size: 1.2rem;
+            color: var(--light);
+            max-width: 600px;
+        }
 
-    .social-floating a:hover {
-      transform: translateY(-5px);
-      background: var(--primary);
-    }
+        .carrusel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            transform: translateY(-50%);
+        }
 
-    .social-floating img {
-      width: 24px;
-      height: 24px;
-      filter: brightness(0) invert(1);
-    }
+        .carrusel-btn {
+            background: rgba(255,255,255,0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .social-floating a:hover img {
-      filter: brightness(0);
-    }
+        .carrusel-btn:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
 
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 60px;
-      height: 60px;
-      background: #25D366;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: pulse 2.5s infinite;
-      z-index: 999;
-      transition: var(--transition);
-    }
+        .carrusel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
 
-    .whatsapp:hover {
-      transform: scale(1.1);
-      animation: none;
-    }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
 
-    .whatsapp img {
-      width: 70%;
-      height: 70%;
-      object-fit: contain;
-    }
+        .dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
 
-    @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5); }
-      50% { transform: scale(1.08); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.8); }
-      100% { transform: scale(1); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5); }
-    }
+        /* Productos Grid */
+        .productos-section {
+            padding: 80px 20px;
+            background: var(--darker);
+        }
 
-    footer {
-      background: var(--dark);
-      color: var(--light);
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 50px;
-    }
+        .productos-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
 
-    footer a {
-      color: var(--primary);
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 600;
-      transition: var(--transition);
-    }
+        .producto-card {
+            background: var(--gray);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
 
-    footer a:hover {
-      color: var(--secondary);
-    }
+        .producto-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255,215,0,0.1);
+        }
 
-    footer p {
-      margin-top: 15px;
-      color: #aaa;
-    }
+        .producto-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #333, #555);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 3rem;
+        }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .top-bar h1 {
-        font-size: 18px;
-      }
-      
-      .hero h2 {
-        font-size: 24px;
-      }
-      
-      .hero p {
-        font-size: 16px;
-      }
-      
-      .carrusel {
-        height: 400px;
-      }
-    }
+        .producto-content {
+            padding: 25px;
+        }
 
-    @media (max-width: 480px) {
-      .top-bar {
-        padding: 10px 15px;
-      }
-      
-      .top-bar h1 {
-        font-size: 16px;
-      }
-      
-      .carrusel {
-        height: 300px;
-      }
-      
-      .carrusel-control {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-      }
-    }
-  </style>
+        .producto-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .producto-description {
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        /* Botones Flotantes Mejorados */
+        .social-floating {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .social-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        .instagram { background: #E4405F; }
+        .facebook { background: #1877F2; }
+        .tiktok { background: #000000; }
+
+        .social-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Secciones Legales */
+        .legal-section {
+            display: none;
+            padding: 100px 20px 60px;
+            background: var(--dark);
+            min-height: 100vh;
+        }
+
+        .legal-section.active {
+            display: block;
+        }
+
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--gray);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .legal-title {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .legal-text {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .close-btn {
+            background: var(--primary);
+            color: var(--darker);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: block;
+            margin: 30px auto 0;
+        }
+
+        .close-btn:hover {
+            background: var(--secondary);
+            color: var(--light);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            padding: 50px 20px 30px;
+            text-align: center;
+            border-top: 1px solid var(--gray);
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+        }
+
+        .footer-link {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .footer-link:hover {
+            color: var(--secondary);
+        }
+
+        .footer-copyright {
+            color: #888;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                flex-direction: column;
+                padding: 2rem 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                border-top: 1px solid var(--gray);
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .carrusel {
+                height: 400px;
+            }
+
+            .slide-title {
+                font-size: 2rem;
+            }
+
+            .productos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-floating {
+                bottom: 90px;
+                right: 20px;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .carrusel {
+                height: 300px;
+            }
+
+            .slide-title {
+                font-size: 1.5rem;
+            }
+
+            .social-btn, .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="top-bar">
-  <!-- LOGO CORREGIDO -->
-  <img src="img/milo-logo.svg" alt="Logo Paul Design COL" />
-  <h1>Paul Design COL</h1>
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-</div>
+    <!-- Header Profesional -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#inicio" class="logo">
+                <img src="img/milo-logo.svg" alt="Paul Design COL" class="logo-img" onerror="this.style.display='none'">
+                <div class="logo-text">PAUL<span class="logo-highlight">DESIGN</span>COL</div>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-<nav class="menu-desplegable" id="menu">
-  <ul>
-    <li><a href="javascript:void(0)" onclick="mostrarSeccion('inicio')">🏠 Inicio</a></li>
-    <li><a href="javascript:void(0)" onclick="mostrarSeccion('camisetas')">👕 Camisetas y Buzos</a></li>
-    <li><a href="javascript:void(0)" onclick="mostrarSeccion('mugs')">☕ Mugs y Termos</a></li>
-    <li><a href="javascript:void(0)" onclick="mostrarSeccion('gorras')">🧢 Gorras Personalizadas</a></li>
-    <li><a href="javascript:void(0)" onclick="mostrarSeccion('bordado')">🧵 Bordado 10×10</a></li>
-    <li><a href="javascript:void(0)" onclick="mostrarSeccion('vinilo')">🎨 Vinilo Textil</a></li>
-  </ul>
-</nav>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#productos" class="nav-link">Productos</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- Sección Hero -->
-<section class="hero" id="inicio">
-  <h2>Diseño Personalizado de Calidad</h2>
-  <p>Transformamos tus ideas en productos únicos con bordado, vinilo textil y técnicas de personalización profesional en Bogotá.</p>
-  <a href="https://wa.me/573178052836?text=Hola%20Paul,%20quiero%20personalizar%20un%20producto" class="cta-button" target="_blank">¡Solicita tu diseño!</a>
-</section>
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1 class="hero-title">Diseño Personalizado de Calidad</h1>
+            <p class="hero-subtitle">Transformamos tus ideas en productos únicos con bordado, vinilo textil y técnicas de personalización profesional en Bogotá.</p>
+            <a href="https://wa.me/573178052836?text=Hola%20Paul,%20quiero%20personalizar%20un%20producto" class="cta-button" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                ¡Solicita tu diseño!
+            </a>
+        </div>
+    </section>
 
-<!-- Carrusel de productos CON RUTAS CORREGIDAS -->
-<div class="carrusel-container">
-  <div class="carrusel" id="carrusel">
-    <!-- Slide 1 - Mug -->
-    <div class="carrusel-slide active">
-      <img src="img/productos/producto1.jpg" alt="Mug personalizado" />
-      <div class="carrusel-overlay">
-        <img src="img/diseno/diseno-mug.png" alt="Diseño aplicado en mug" />
-      </div>
+    <!-- Carrusel de Productos -->
+    <section class="carrusel-section" id="servicios">
+        <h2 class="section-title">Nuestros Trabajos</h2>
+        <div class="carrusel-container">
+            <div class="carrusel" id="carrusel">
+                <div class="carrusel-slide active">
+                    <div class="slide-image"></div>
+                    <div class="slide-overlay">
+                        <h3 class="slide-title">Camisetas Personalizadas</h3>
+                        <p class="slide-description">Vinilo textil de alta calidad en camisetas premium. Diseños únicos que duran.</p>
+                    </div>
+                </div>
+                <div class="carrusel-slide">
+                    <div class="slide-image"></div>
+                    <div class="slide-overlay">
+                        <h3 class="slide-title">Gorras Bordadas</h3>
+                        <p class="slide-description">Bordado profesional 10x10 con los mejores hilos y técnicas.</p>
+                    </div>
+                </div>
+                <div class="carrusel-slide">
+                    <div class="slide-image"></div>
+                    <div class="slide-overlay">
+                        <h3 class="slide-title">Mugs Personalizados</h3>
+                        <p class="slide-description">Impresión full color en mugs de cerámica de primera calidad.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carrusel-controls">
+                <button class="carrusel-btn prev" onclick="cambiarSlide(-1)">‹</button>
+                <button class="carrusel-btn next" onclick="cambiarSlide(1)">›</button>
+            </div>
+            
+            <div class="carrusel-dots">
+                <button class="dot active" onclick="irASlide(0)"></button>
+                <button class="dot" onclick="irASlide(1)"></button>
+                <button class="dot" onclick="irASlide(2)"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos Section -->
+    <section class="productos-section" id="productos">
+        <h2 class="section-title">Nuestros Productos</h2>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <div class="producto-image">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <div class="producto-content">
+                    <h3 class="producto-title">Camisetas y Buzos</h3>
+                    <p class="producto-description">Personalización con vinilo textil y estampado digital en algodón premium.</p>
+                </div>
+            </div>
+            
+            <div class="producto-card">
+                <div class="producto-image">
+                    <i class="fas fa-mug-hot"></i>
+                </div>
+                <div class="producto-content">
+                    <h3 class="producto-title">Mugs y Termos</h3>
+                    <p class="producto-description">Impresión full color en cerámica de alta calidad, perfectos para regalos.</p>
+                </div>
+            </div>
+            
+            <div class="producto-card">
+                <div class="producto-image">
+                    <i class="fas fa-hat-cowboy"></i>
+                </div>
+                <div class="producto-content">
+                    <h3 class="producto-title">Gorras Personalizadas</h3>
+                    <p class="producto-description">Bordado de precisión en diferentes estilos y materiales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secciones Legales -->
+    <section id="politica" class="legal-section">
+        <div class="legal-content">
+            <h2 class="legal-title">Política de Privacidad</h2>
+            <p class="legal-text">Este sitio no recopila datos personales ni utiliza cookies. La navegación es segura mediante HTTPS. Si nos contactas por WhatsApp, tu información será tratada con confidencialidad y no será compartida ni almacenada fuera del canal de atención.</p>
+            <p class="legal-text">Las imágenes proporcionadas por el cliente se usan exclusivamente para el producto solicitado. No se almacenan ni reutilizan sin autorización.</p>
+            <p class="legal-text">Paul Design COL no utiliza formularios, bases de datos ni sistemas de registro. Toda la comunicación se realiza directamente por WhatsApp Business.</p>
+            <button class="close-btn" onclick="ocultarSeccion('politica')">Cerrar</button>
+        </div>
+    </section>
+
+    <section id="terminos" class="legal-section">
+        <div class="legal-content">
+            <h2 class="legal-title">Términos y Condiciones</h2>
+            <p class="legal-text">Paul Design COL ofrece productos personalizados desde Bogotá, Colombia. El cliente es responsable de los derechos de uso de imágenes, logotipos o frases que solicita.</p>
+            <p class="legal-text">Los pedidos se gestionan exclusivamente por WhatsApp Business. Cada solicitud se atiende de forma individual, y los precios se definen según el tipo de producto, técnica de personalización y cantidad.</p>
+            <p class="legal-text">Los tiempos de entrega, condiciones de pago y opciones de envío se acuerdan directamente con el cliente.</p>
+            <button class="close-btn" onclick="ocultarSeccion('terminos')">Cerrar</button>
+        </div>
+    </section>
+
+    <!-- Botones Flotantes -->
+    <div class="social-floating">
+        <a href="https://www.instagram.com/pauldesigncol/" class="social-btn instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61566438401213" class="social-btn facebook" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.tiktok.com/@pauldesigncol" class="social-btn tiktok" target="_blank">
+            <i class="fab fa-tiktok"></i>
+        </a>
     </div>
-    <!-- Slide 2 - Gorra -->
-    <div class="carrusel-slide">
-      <img src="img/productos/producto2.jpg" alt="Gorra personalizada" />
-      <div class="carrusel-overlay">
-        <img src="img/diseno/diseno-gorra.png" alt="Diseño aplicado en gorra" />
-      </div>
-    </div>
-    <!-- Slide 3 - Camiseta -->
-    <div class="carrusel-slide">
-      <img src="img/productos/producto3.jpg" alt="Camiseta personalizada" />
-      <div class="carrusel-overlay">
-        <img src="img/diseno/diseno-camiseta.png" alt="Diseño aplicado en camiseta" />
-      </div>
-    </div>
-  </div>
-  
-  <div class="carrusel-controls">
-    <button class="carrusel-control prev" onclick="cambiarSlide(-1)">&#10094;</button>
-    <button class="carrusel-control next" onclick="cambiarSlide(1)">&#10095;</button>
-  </div>
-  
-  <div class="carrusel-dots" id="carrusel-dots">
-    <button class="carrusel-dot active" onclick="irASlide(0)"></button>
-    <button class="carrusel-dot" onclick="irASlide(1)"></button>
-    <button class="carrusel-dot" onclick="irASlide(2)"></button>
-  </div>
-</div>
 
-<!-- Botones flotantes CON RUTAS CORREGIDAS -->
-<div class="social-floating">
-  <a href="https://www.instagram.com/pauldesigncol/" target="_blank" title="Instagram">
-    <img src="icons/instagram.svg" alt="Instagram" />
-  </a>
-  <a href="https://www.facebook.com/profile.php?id=61566438401213" target="_blank" title="Facebook">
-    <img src="icons/facebook.svg" alt="Facebook" />
-  </a>
-  <a href="https://www.tiktok.com/@pauldesigncol" target="_blank" title="TikTok">
-    <img src="icons/tiktok.svg" alt="TikTok" />
-  </a>
-</div>
+    <a href="https://wa.me/573178052836?text=Hola%20Paul,%20quiero%20personalizar%20un%20producto" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-<a class="whatsapp" href="https://wa.me/573178052836?text=Hola%20Paul,%20quiero%20personalizar%20un%20producto" target="_blank" title="WhatsApp Business">
-  <img src="icons/whatsapp-business.svg" alt="WhatsApp Business" />
-</a>
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <div class="footer-links">
+            <a class="footer-link" onclick="mostrarSeccion('politica')">Política de Privacidad</a>
+            <a class="footer-link" onclick="mostrarSeccion('terminos')">Términos y Condiciones</a>
+        </div>
+        <p class="footer-copyright">📍 Bogotá, Colombia · &copy; 2025 Paul Design COL · Todos los derechos reservados</p>
+    </footer>
 
-<!-- Footer -->
-<footer>
-  <div>
-    <a href="javascript:void(0)" onclick="mostrarSeccion('politica')">🔒 Política de Privacidad</a>
-    <a href="javascript:void(0)" onclick="mostrarSeccion('terminos')">📄 Términos y Condiciones</a>
-  </div>
-  <p>📍 Bogotá, Colombia · &copy; 2025 Paul Design COL</p>
-</footer>
+    <script>
+        // Menú Hamburguesa
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
 
-<script>
-  // Variables para el carrusel
-  let slideIndex = 0;
-  const slides = document.querySelectorAll('.carrusel-slide');
-  const dots = document.querySelectorAll('.carrusel-dot');
-  
-  // Función para cambiar slide
-  function cambiarSlide(n) {
-    mostrarSlide(slideIndex + n);
-  }
-  
-  // Función para ir a un slide específico
-  function irASlide(n) {
-    mostrarSlide(n);
-  }
-  
-  // Función principal para mostrar slide
-  function mostrarSlide(n) {
-    if (n >= slides.length) {
-      slideIndex = 0;
-    } else if (n < 0) {
-      slideIndex = slides.length - 1;
-    } else {
-      slideIndex = n;
-    }
-    
-    // Ocultar todos los slides
-    slides.forEach(slide => {
-      slide.classList.remove('active');
-    });
-    
-    // Remover clase active de todos los dots
-    dots.forEach(dot => {
-      dot.classList.remove('active');
-    });
-    
-    // Mostrar slide actual y activar dot correspondiente
-    slides[slideIndex].classList.add('active');
-    dots[slideIndex].classList.add('active');
-  }
-  
-  // Autoavance del carrusel
-  function autoAvance() {
-    cambiarSlide(1);
-  }
-  
-  // Iniciar autoavance cada 5 segundos
-  let intervalo = setInterval(autoAvance, 5000);
-  
-  // Pausar autoavance al interactuar con controles
-  document.querySelectorAll('.carrusel-control, .carrusel-dot').forEach(element => {
-    element.addEventListener('click', () => {
-      clearInterval(intervalo);
-      intervalo = setInterval(autoAvance, 5000);
-    });
-  });
-  
-  // Funciones del menú
-  function toggleMenu() {
-    const menu = document.getElementById("menu");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-  }
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
 
-  function mostrarSeccion(id) {
-    const secciones = document.querySelectorAll('.seccion');
-    secciones.forEach(sec => sec.classList.remove('activa'));
-    
-    const activa = document.getElementById(id);
-    if (activa) activa.classList.add('activa');
-    document.getElementById("menu").style.display = "none";
-  }
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
 
-  function ocultarSeccion(id) {
-    const seccion = document.getElementById(id);
-    if (seccion) seccion.classList.remove('activa');
-  }
+        // Carrusel
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carrusel-slide');
+        const dots = document.querySelectorAll('.dot');
 
-  document.addEventListener("click", function(event) {
-    const menu = document.getElementById("menu");
-    const toggle = document.querySelector(".menu-toggle");
-    if (menu.style.display === "block" && !menu.contains(event.target) && !toggle.contains(event.target)) {
-      menu.style.display = "none";
-    }
-  });
-</script>
+        function mostrarSlide(n) {
+            if (n >= slides.length) slideIndex = 0;
+            if (n < 0) slideIndex = slides.length - 1;
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+        }
 
+        function cambiarSlide(n) {
+            mostrarSlide(slideIndex + n);
+        }
+
+        function irASlide(n) {
+            mostrarSlide(n);
+        }
+
+        // Autoavance del carrusel
+        setInterval(() => {
+            cambiarSlide(1);
+        }, 5000);
+
+        // Secciones legales
+        function mostrarSeccion(id) {
+            document.querySelectorAll('.legal-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function ocultarSeccion(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
