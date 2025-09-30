@@ -204,7 +204,7 @@
             box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
         }
 
-        /* Elementos de Confianza - NUEVA SECCIÓN */
+        /* Elementos de Confianza */
         .confianza-section {
             padding: 60px 20px;
             background: var(--darker);
@@ -454,26 +454,29 @@
             margin-bottom: 20px;
         }
 
-        /* SECCIÓN TESTIMONIOS */
+        /* SECCIÓN TESTIMONIOS - 3 COLUMNAS */
         .testimonios-section {
             padding: 80px 20px;
             background: var(--dark);
         }
 
         .testimonios-grid {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
         }
 
         .testimonio-card {
             background: var(--gray);
-            padding: 30px;
+            padding: 25px;
             border-radius: 15px;
             border-left: 4px solid var(--primary);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .testimonio-card:hover {
@@ -486,7 +489,8 @@
             font-style: italic;
             margin: 15px 0;
             line-height: 1.6;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            flex-grow: 1;
         }
 
         .testimonio-cliente {
@@ -508,6 +512,69 @@
         .stars {
             color: var(--primary);
             font-size: 1.2rem;
+        }
+
+        /* SECCIÓN CONTACTO COMPLETO */
+        .contacto-completo {
+            padding: 80px 20px;
+            background: var(--dark);
+        }
+
+        .opciones-contacto {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .opcion-contacto {
+            background: var(--gray);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            border-top: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .opcion-contacto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255,215,0,0.1);
+        }
+
+        .opcion-contacto i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .opcion-contacto h3 {
+            color: var(--light);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .opcion-contacto p {
+            color: #ccc;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .btn-contacto {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--darker);
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-contacto:hover {
+            background: var(--secondary);
+            color: var(--light);
+            transform: translateY(-2px);
         }
 
         /* SECCIÓN COTIZACIÓN */
@@ -581,141 +648,139 @@
             box-shadow: 0 5px 15px rgba(255,215,0,0.3);
         }
 
-        /* SECCIÓN CONTACTO COMPLETO - NUEVA */
-        .contacto-completo {
-            padding: 80px 20px;
-            background: var(--dark);
-        }
-
-        .opciones-contacto {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .opcion-contacto {
-            background: var(--gray);
-            padding: 40px 30px;
-            border-radius: 15px;
-            text-align: center;
-            border-top: 4px solid var(--primary);
-            transition: var(--transition);
-        }
-
-        .opcion-contacto:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255,215,0,0.1);
-        }
-
-        .opcion-contacto i {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .opcion-contacto h3 {
-            color: var(--light);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        .opcion-contacto p {
-            color: #ccc;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .btn-contacto {
-            display: inline-block;
-            background: var(--primary);
-            color: var(--darker);
-            padding: 12px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .btn-contacto:hover {
-            background: var(--secondary);
-            color: var(--light);
-            transform: translateY(-2px);
-        }
-
-        /* CHATBOT - NUEVO */
-        .chatbot-simple {
+        /* CHATBOT MILO LEÓN CON COLORES DE MARCA */
+        .chatbot-milo {
             position: fixed;
             bottom: 100px;
             left: 20px;
             z-index: 999;
         }
 
-        .chatbot-btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 15px 20px;
+        .milo-btn {
+            background: linear-gradient(135deg, var(--primary), #00CED1);
+            color: var(--darker);
+            padding: 12px 18px;
             border-radius: 50px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             cursor: pointer;
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
             transition: var(--transition);
-            font-weight: 600;
+            font-weight: 700;
+            border: 2px solid var(--secondary);
+            position: relative;
         }
 
-        .chatbot-btn:hover {
+        .milo-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+            background: linear-gradient(135deg, #00CED1, var(--primary));
         }
 
-        .chatbot-options {
+        .milo-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .milo-face {
+            font-size: 1.5rem;
+            filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
+        }
+
+        .milo-options {
             position: absolute;
             bottom: 70px;
             left: 0;
             background: white;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 20px;
+            padding: 0;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
             display: none;
-            min-width: 250px;
-            border: 2px solid #667eea;
+            min-width: 280px;
+            border: 2px solid var(--primary);
+            overflow: hidden;
+            z-index: 1000;
         }
 
-        .chatbot-options.active {
+        .milo-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--darker);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 2px solid var(--light);
+        }
+
+        .milo-chat-avatar {
+            font-size: 2.5rem;
+            filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
+        }
+
+        .milo-chat-info h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .milo-chat-info p {
+            margin: 5px 0 0 0;
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .milo-options.active {
             display: block;
-            animation: fadeInUp 0.3s ease;
+            animation: miloAppear 0.3s ease;
         }
 
-        @keyframes fadeInUp {
+        @keyframes miloAppear {
             from {
                 opacity: 0;
-                transform: translateY(10px);
+                transform: translateY(10px) scale(0.9);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
         }
 
-        .chat-option {
-            padding: 12px 15px;
-            margin: 8px 0;
+        .milo-option {
+            padding: 15px 20px;
+            margin: 0;
             background: #f8f9fa;
-            border-radius: 8px;
             cursor: pointer;
             transition: var(--transition);
             color: #333;
             font-weight: 500;
-            border: 1px solid #e9ecef;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .chat-option:hover {
-            background: #667eea;
+        .milo-option:last-child {
+            border-bottom: none;
+            border-radius: 0 0 18px 18px;
+        }
+
+        .milo-option:hover {
+            background: var(--primary);
             color: white;
-            transform: translateX(5px);
+            transform: translateX(8px);
+        }
+
+        .milo-option span {
+            font-size: 1.2rem;
         }
 
         /* Botones Flotantes Mejorados */
@@ -782,56 +847,118 @@
             100% { transform: scale(1); }
         }
 
-        /* Secciones Legales */
-        .legal-section {
+        /* MODALES FLOTANTES PARA TÉRMINOS Y POLÍTICAS */
+        .legal-modal {
             display: none;
-            padding: 100px 20px 60px;
-            background: var(--dark);
-            min-height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            backdrop-filter: blur(5px);
         }
 
-        .legal-section.active {
-            display: block;
+        .legal-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
         }
 
-        .legal-content {
-            max-width: 800px;
-            margin: 0 auto;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .legal-modal-content {
             background: var(--gray);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 90%;
+            max-height: 90vh;
+            width: 800px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 2px solid var(--primary);
+            overflow: hidden;
+            position: relative;
         }
 
-        .legal-title {
-            color: var(--primary);
-            margin-bottom: 2rem;
-            text-align: center;
+        .legal-modal-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--darker);
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--light);
+        }
+
+        .legal-modal-title {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .legal-modal-close {
+            background: none;
+            border: none;
             font-size: 2rem;
+            color: var(--darker);
+            cursor: pointer;
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .legal-text {
+        .legal-modal-close:hover {
+            background: rgba(0,0,0,0.1);
+            transform: rotate(90deg);
+        }
+
+        .legal-modal-body {
+            padding: 30px;
+            max-height: 60vh;
+            overflow-y: auto;
             color: #ccc;
-            margin-bottom: 1.5rem;
             line-height: 1.8;
         }
 
-        .close-btn {
-            background: var(--primary);
-            color: var(--darker);
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: block;
-            margin: 30px auto 0;
+        .legal-modal-body::-webkit-scrollbar {
+            width: 8px;
         }
 
-        .close-btn:hover {
-            background: var(--secondary);
-            color: var(--light);
+        .legal-modal-body::-webkit-scrollbar-track {
+            background: var(--dark);
+            border-radius: 4px;
+        }
+
+        .legal-modal-body::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        .legal-modal-body h4 {
+            color: var(--primary);
+            margin: 25px 0 15px 0;
+            font-size: 1.2rem;
+        }
+
+        .legal-modal-body h4:first-child {
+            margin-top: 0;
+        }
+
+        .legal-modal-body ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .legal-modal-body li {
+            margin-bottom: 8px;
         }
 
         /* Footer Mejorado */
@@ -895,6 +1022,12 @@
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .testimonios-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .menu-toggle {
                 display: flex;
@@ -941,6 +1074,7 @@
 
             .testimonios-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
 
             .confianza-grid {
@@ -955,18 +1089,27 @@
                 grid-template-columns: 1fr;
             }
 
-            .chatbot-simple {
+            .chatbot-milo {
                 left: 15px;
                 bottom: 90px;
             }
 
-            .chatbot-btn {
-                padding: 12px 18px;
+            .milo-btn {
+                padding: 10px 15px;
                 font-size: 0.9rem;
             }
 
-            .chatbot-options {
-                min-width: 220px;
+            .milo-avatar {
+                width: 35px;
+                height: 35px;
+            }
+
+            .milo-face {
+                font-size: 1.3rem;
+            }
+
+            .milo-options {
+                min-width: 260px;
                 left: -10px;
             }
 
@@ -1006,17 +1149,33 @@
                 font-size: 1.2rem;
             }
 
-            .testimonios-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .chatbot-btn span {
+            .milo-btn span:not(.milo-face) {
                 display: none;
             }
 
-            .chatbot-btn {
-                padding: 15px;
+            .milo-btn {
+                padding: 12px;
                 border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                justify-content: center;
+            }
+
+            .milo-options {
+                min-width: 240px;
+            }
+
+            .legal-modal-content {
+                width: 95%;
+                margin: 20px;
+            }
+
+            .legal-modal-header {
+                padding: 20px;
+            }
+
+            .legal-modal-body {
+                padding: 20px;
             }
         }
     </style>
@@ -1188,7 +1347,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN TESTIMONIOS -->
+    <!-- SECCIÓN TESTIMONIOS - 3 COLUMNAS -->
     <section class="testimonios-section" id="testimonios">
         <h2 class="section-title">Clientes Satisfechos</h2>
         <div class="testimonios-grid">
@@ -1227,7 +1386,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN CONTACTO COMPLETO - NUEVA -->
+    <!-- SECCIÓN CONTACTO COMPLETO -->
     <section class="contacto-completo" id="contacto">
         <h2 class="section-title">Elige cómo contactarnos</h2>
         <div class="opciones-contacto">
@@ -1293,49 +1452,147 @@
         </div>
     </section>
 
-    <!-- Secciones Legales -->
-    <section id="politica" class="legal-section">
-        <div class="legal-content">
-            <h2 class="legal-title">Política de Privacidad</h2>
-            <p class="legal-text">Este sitio no recopila datos personales ni utiliza cookies. La navegación es segura mediante HTTPS. Si nos contactas por WhatsApp, tu información será tratada con confidencialidad y no será compartida ni almacenada fuera del canal de atención.</p>
-            <p class="legal-text">Las imágenes proporcionadas por el cliente se usan exclusivamente para el producto solicitado. No se almacenan ni reutilizan sin autorización.</p>
-            <p class="legal-text">Paul Design COL no utiliza formularios, bases de datos ni sistemas de registro. Toda la comunicación se realiza directamente por WhatsApp Business.</p>
-            <button class="close-btn" onclick="ocultarSeccion('politica')">Cerrar</button>
+    <!-- MODALES FLOTANTES PARA TÉRMINOS Y POLÍTICAS -->
+    <div id="politicaModal" class="legal-modal">
+        <div class="legal-modal-content">
+            <div class="legal-modal-header">
+                <h2 class="legal-modal-title">Política de Privacidad</h2>
+                <button class="legal-modal-close" onclick="cerrarModal('politica')">&times;</button>
+            </div>
+            <div class="legal-modal-body">
+                <h4>🔒 Protección de tus Datos</h4>
+                <p>En Paul Design COL valoramos y protegemos tu privacidad. Esta política explica cómo manejamos tu información:</p>
+                
+                <h4>📝 Formulario de Contacto</h4>
+                <p>Los datos ingresados en nuestro formulario de cotización (nombre, WhatsApp, mensaje) se utilizan exclusivamente para:</p>
+                <ul>
+                    <li>Preparar y enviar tu cotización por WhatsApp</li>
+                    <li>Contactarte para aclarar detalles de tu proyecto</li>
+                    <li>No almacenamos esta información en bases de datos</li>
+                    <li>Los datos se eliminan después de atender tu consulta</li>
+                </ul>
+                
+                <h4>🤖 Chatbot Milo</h4>
+                <p>Nuestro asistente virtual Milo funciona como intermediario para:</p>
+                <ul>
+                    <li>Dirigirte al canal de comunicación adecuado</li>
+                    <li>Pre-llenar mensajes de WhatsApp para mayor facilidad</li>
+                    <li>No recopila ni almacena información personal</li>
+                </ul>
+                
+                <h4>📧 Correo Electrónico</h4>
+                <p>Al contactarnos por correo (paul.design.col@gmail.com):</p>
+                <ul>
+                    <li>Tus archivos e información se tratan con confidencialidad</li>
+                    <li>Usamos tu información solo para el proyecto específico</li>
+                    <li>No compartimos tu información con terceros</li>
+                </ul>
+                
+                <h4>🖼️ Uso de Imágenes</h4>
+                <p>Las imágenes que nos compartas para personalización:</p>
+                <ul>
+                    <li>Se usan exclusivamente para crear tu producto</li>
+                    <li>No se almacenan después de completar el pedido</li>
+                    <li>No se reutilizan sin tu autorización expresa</li>
+                </ul>
+                
+                <p><strong>Tu confianza es nuestra prioridad. Trabajamos con transparencia y profesionalismo.</strong></p>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <section id="terminos" class="legal-section">
-        <div class="legal-content">
-            <h2 class="legal-title">Términos y Condiciones</h2>
-            <p class="legal-text">Paul Design COL ofrece productos personalizados desde Bogotá, Colombia. El cliente es responsable de los derechos de uso de imágenes, logotipos o frases que solicita.</p>
-            <p class="legal-text">Los pedidos se gestionan exclusivamente por WhatsApp Business. Cada solicitud se atiende de forma individual, y los precios se definen según el tipo de producto, técnica de personalización y cantidad.</p>
-            <p class="legal-text">Los tiempos de entrega, condiciones de pago y opciones de envío se acuerdan directamente con el cliente.</p>
-            <button class="close-btn" onclick="ocultarSeccion('terminos')">Cerrar</button>
+    <div id="terminosModal" class="legal-modal">
+        <div class="legal-modal-content">
+            <div class="legal-modal-header">
+                <h2 class="legal-modal-title">Términos y Condiciones</h2>
+                <button class="legal-modal-close" onclick="cerrarModal('terminos')">&times;</button>
+            </div>
+            <div class="legal-modal-body">
+                <h4>📋 Alcance del Servicio</h4>
+                <p>Paul Design COL ofrece servicios de diseño y personalización desde Bogotá, Colombia, incluyendo:</p>
+                <ul>
+                    <li>Personalización de camisetas, gorras y mugs</li>
+                    <li>Técnicas de bordado, vinilo textil e impresión</li>
+                    <li>Asesoría en diseño personalizado</li>
+                </ul>
+                
+                <h4>🎨 Derechos de Autor y Uso de Imágenes</h4>
+                <p>El cliente declara y garantiza que:</p>
+                <ul>
+                    <li>Posee los derechos de las imágenes, logotipos o frases solicitadas</li>
+                    <li>Autoriza a Paul Design COL a utilizarlas exclusivamente para el producto contratado</li>
+                    <li>Asume toda responsabilidad por posibles infracciones a derechos de terceros</li>
+                </ul>
+                
+                <h4>💬 Canales de Comunicación Oficiales</h4>
+                <p>Nuestros canales de atención son:</p>
+                <ul>
+                    <li><strong>WhatsApp:</strong> +57 317 8052836 (Principal)</li>
+                    <li><strong>Correo:</strong> paul.design.col@gmail.com (Para archivos)</li>
+                    <li><strong>Formulario web:</strong> Cotizaciones organizadas</li>
+                    <li><strong>Chatbot Milo:</strong> Asistente para consultas rápidas</li>
+                </ul>
+                
+                <h4>💰 Cotizaciones y Pagos</h4>
+                <ul>
+                    <li>Las cotizaciones se envían por WhatsApp después de evaluar los requerimientos</li>
+                    <li>Los precios varían según técnica, cantidad y complejidad del diseño</li>
+                    <li>Se requieren anticipos para iniciar producción</li>
+                    <li>Métodos de pago: Transferencia bancaria, Nequi, Daviplata</li>
+                </ul>
+                
+                <h4>⏱️ Tiempos de Entrega</h4>
+                <ul>
+                    <li>Se confirman según la complejidad del pedido</li>
+                    <li>Sujetos a disponibilidad de materiales</li>
+                    <li>En Bogotá: 2-5 días hábiles (según volumen)</li>
+                    <li>Nacional: 3-7 días hábiles + transporte</li>
+                </ul>
+                
+                <h4>✅ Garantía de Calidad</h4>
+                <p>Garantizamos la calidad de nuestros productos y técnicas. Si recibes un producto con defectos de fabricación, contáctanos dentro de las 48 horas posteriores a la entrega.</p>
+                
+                <p><em>Última actualización: Enero 2025</em></p>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- CHATBOT - NUEVO -->
-    <div class="chatbot-simple">
-        <div class="chatbot-btn">
-            <i class="fas fa-robot"></i>
-            <span>¿Tienes dudas?</span>
+    <!-- CHATBOT MILO LEÓN -->
+    <div class="chatbot-milo">
+        <div class="milo-btn">
+            <div class="milo-avatar">
+                <span class="milo-face">🦁</span>
+            </div>
+            <span>¡Hola! Soy Milo</span>
         </div>
         
-        <div class="chatbot-options">
-            <div class="chat-option" data-action="whatsapp" data-message="Hola Paul, quiero consultar precios de personalización">
-                💲 Consultar Precios
+        <div class="milo-options">
+            <div class="milo-header">
+                <div class="milo-chat-avatar">🦁</div>
+                <div class="milo-chat-info">
+                    <h4>Milo - Tu Asistente</h4>
+                    <p>Paul Design COL</p>
+                </div>
             </div>
-            <div class="chat-option" data-action="whatsapp" data-message="Hola Paul, ¿qué técnicas de personalización tienen disponibles?">
-                🎨 Técnicas Disponibles
+            <div class="milo-option" data-action="whatsapp" data-message="Hola Paul, quiero consultar precios de personalización">
+                <span>💲</span>
+                Consultar Precios
             </div>
-            <div class="chat-option" data-action="whatsapp" data-message="Hola Paul, ¿cuál es el tiempo de entrega aproximado?">
-                ⏱ Tiempos de Entrega
+            <div class="milo-option" data-action="whatsapp" data-message="Hola Paul, ¿qué técnicas de personalización tienen disponibles?">
+                <span>🎨</span>
+                Técnicas Disponibles
             </div>
-            <div class="chat-option" data-action="email" data-email="paul.design.col@gmail.com">
-                📧 Enviar Archivos por Correo
+            <div class="milo-option" data-action="whatsapp" data-message="Hola Paul, ¿cuál es el tiempo de entrega aproximado?">
+                <span>⏱</span>
+                Tiempos de Entrega
             </div>
-            <div class="chat-option" data-action="whatsapp" data-message="Hola Paul, tengo una pregunta específica sobre un diseño">
-                💬 Otra Consulta
+            <div class="milo-option" data-action="email" data-email="paul.design.col@gmail.com">
+                <span>📧</span>
+                Enviar Archivos
+            </div>
+            <div class="milo-option" data-action="whatsapp" data-message="Hola Paul, tengo una pregunta específica sobre un diseño">
+                <span>💬</span>
+                Otra Consulta
             </div>
         </div>
     </div>
@@ -1389,8 +1646,8 @@
         </div>
 
         <div class="footer-links">
-            <a class="footer-link" onclick="mostrarSeccion('politica')">Política de Privacidad</a>
-            <a class="footer-link" onclick="mostrarSeccion('terminos')">Términos y Condiciones</a>
+            <a class="footer-link" onclick="mostrarModal('politica')">Política de Privacidad</a>
+            <a class="footer-link" onclick="mostrarModal('terminos')">Términos y Condiciones</a>
         </div>
         <p class="footer-copyright">📍 Bogotá, Colombia · &copy; 2025 Paul Design COL · Todos los derechos reservados</p>
     </footer>
@@ -1467,19 +1724,19 @@
             this.reset();
         });
 
-        // CHATBOT functionality
+        // CHATBOT MILO functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const chatbotBtn = document.querySelector('.chatbot-btn');
-            const chatbotOptions = document.querySelector('.chatbot-options');
+            const miloBtn = document.querySelector('.milo-btn');
+            const miloOptions = document.querySelector('.milo-options');
             
-            // Toggle chatbot options
-            chatbotBtn.addEventListener('click', function(e) {
+            // Toggle Milo options
+            miloBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
-                chatbotOptions.classList.toggle('active');
+                miloOptions.classList.toggle('active');
             });
             
             // Handle option clicks
-            document.querySelectorAll('.chat-option').forEach(option => {
+            document.querySelectorAll('.milo-option').forEach(option => {
                 option.addEventListener('click', function() {
                     const action = this.getAttribute('data-action');
                     const message = this.getAttribute('data-message');
@@ -1493,30 +1750,58 @@
                     }
                     
                     // Close options after selection
-                    chatbotOptions.classList.remove('active');
+                    miloOptions.classList.remove('active');
                 });
             });
             
-            // Close chatbot when clicking outside
+            // Close Milo when clicking outside
             document.addEventListener('click', function(e) {
-                if (!e.target.closest('.chatbot-simple')) {
-                    chatbotOptions.classList.remove('active');
+                if (!e.target.closest('.chatbot-milo')) {
+                    miloOptions.classList.remove('active');
                 }
             });
         });
 
-        // Secciones legales
-        function mostrarSeccion(id) {
-            document.querySelectorAll('.legal-section').forEach(section => {
-                section.classList.remove('active');
+        // Modal para términos y políticas
+        function mostrarModal(id) {
+            // Ocultar todos los modales primero
+            document.querySelectorAll('.legal-modal').forEach(modal => {
+                modal.classList.remove('active');
             });
-            document.getElementById(id).classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Mostrar el modal específico
+            const modal = document.getElementById(id + 'Modal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
         }
 
-        function ocultarSeccion(id) {
-            document.getElementById(id).classList.remove('active');
+        function cerrarModal(id) {
+            const modal = document.getElementById(id + 'Modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         }
+
+        // Cerrar modal al hacer click fuera
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('legal-modal')) {
+                e.target.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Cerrar modal con ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.legal-modal').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = '';
+            }
+        });
 
         // Smooth scroll para enlaces internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
