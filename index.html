@@ -76,15 +76,6 @@
       color: #00BFFF;
     }
 
-    .seccion {
-      display: none;
-      padding: 20px;
-    }
-
-    .seccion.activa {
-      display: block;
-    }
-
     .mockup-slider {
       position: relative;
       width: 100%;
@@ -95,53 +86,34 @@
       background: #111;
     }
 
-    .slider-productos {
-      display: flex;
-      animation: deslizar 20s infinite linear;
-    }
-
-    .placeholder {
+    .mockup-slider img {
       width: 100%;
-      height: 300px;
-      background: #000;
-      border: 2px dashed #FFD700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 18px;
-      flex-shrink: 0;
-      color: #FFD700;
+      height: auto;
+      object-fit: cover;
+      display: block;
     }
 
     .overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
       pointer-events: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     .overlay img {
-      width: 40%;
+      max-width: 60%;
+      height: auto;
       opacity: 0.85;
-      animation: pausa 20s infinite ease-in-out;
     }
 
-    @keyframes deslizar {
-      0% { transform: translateX(0); }
-      33% { transform: translateX(-100%); }
-      66% { transform: translateX(-200%); }
-      100% { transform: translateX(0); }
+    .seccion {
+      display: none;
+      padding: 20px;
     }
 
-    @keyframes pausa {
-      0%, 33%, 66% { opacity: 0.85; transform: scale(1); }
-      16%, 50%, 83% { opacity: 1; transform: scale(1.05); }
+    .seccion.activa {
+      display: block;
     }
 
     .social-floating {
@@ -213,22 +185,34 @@
   <ul>
     <li><a href="javascript:void(0)" onclick="mostrarSeccion('camisetas')">👕 Camisetas y Buzos</a></li>
     <li><a href="javascript:void(0)" onclick="mostrarSeccion('mugs')">☕ Mugs y Termos</a></li>
+    <li><a href="javascript:void(0)" onclick="mostrarSeccion('gorras')">🧢 Gorras Personalizadas</a></li>
     <li><a href="javascript:void(0)" onclick="mostrarSeccion('bordado')">🧵 Bordado 10×10</a></li>
-    <li><a href="javascript:void(0)" onclick="mostrarSeccion('fotografia')">📸 Fotografía Impresa</a></li>
     <li><a href="javascript:void(0)" onclick="mostrarSeccion('vinilo')">🎨 Vinilo Textil</a></li>
   </ul>
 </nav>
 
-<!-- Carrusel doble banda -->
+<!-- Banda Mug -->
 <div class="mockup-slider">
-  <div class="slider-productos">
-    <div class="placeholder">Producto 1</div>
-    <div class="placeholder">Producto 2</div>
-    <div class="placeholder">Producto 3</div>
-  </div>
+  <img src="img/productos/mug1.jpg" alt="Mug personalizado" />
   <div class="overlay">
-  <img src="img/milo-logo.png" alt="Marca Milo" style="opacity: 0.1; width: 60%; position: absolute;" />
+    <img src="img/diseño/diseno-mug.png" alt="Diseño aplicado en mug" />
+  </div>
 </div>
+
+<!-- Banda Gorra -->
+<div class="mockup-slider">
+  <img src="img/productos/gorra1.jpg" alt="Gorra personalizada" />
+  <div class="overlay">
+    <img src="img/diseño/diseno-gorra.png" alt="Diseño aplicado en gorra" />
+  </div>
+</div>
+
+<!-- Banda Camiseta -->
+<div class="mockup-slider">
+  <img src="img/productos/camiseta1.jpg" alt="Camiseta personalizada" />
+  <div class="overlay">
+    <img src="img/diseño/diseno-camiseta.png" alt="Diseño aplicado en camiseta" />
+  </div>
 </div>
 
 <section id="camisetas" class="seccion">
@@ -241,14 +225,14 @@
   <p>Sublimación profesional con tinta Epson F170 y horno de convección. Alta calidad y durabilidad.</p>
 </section>
 
+<section id="gorras" class="seccion">
+  <h2>🧢 Gorras Personalizadas</h2>
+  <p>Aplicación de diseño sobre gorras tipo trucker, planas o deportivas. Corte preciso y acabado profesional.</p>
+</section>
+
 <section id="bordado" class="seccion">
   <h2>🧵 Bordado 10×10</h2>
   <p>Aplicación profesional con Brother SE700. Logos, nombres o detalles decorativos sobre buzos y camisetas.</p>
-</section>
-
-<section id="fotografia" class="seccion">
-  <h2>📸 Fotografía Impresa</h2>
-  <p>Impresión sobre tela, papel o productos personalizados. Ideal para recuerdos y decoración creativa.</p>
 </section>
 
 <section id="vinilo" class="seccion">
@@ -262,6 +246,7 @@
   <p>Paul Design COL no utiliza formularios, bases de datos ni sistemas de registro. Toda la comunicación se realiza directamente por WhatsApp Business, lo que garantiza un canal único y transparente.</p>
   <p>Los datos visibles en redes sociales (como nombre, perfil o imagen) no son recopilados ni analizados por este sitio. No se realiza ningún tipo de seguimiento ni análisis de comportamiento.</p>
   <p>La seguridad del sitio está reforzada mediante cifrado SSL y navegación directa sin intermediarios. No se integran servicios externos que puedan comprometer la privacidad del visitante.</p>
+  <button onclick="ocultarSeccion('politica')">Cerrar</button>
 </section>
 
 <section id="terminos" class="seccion">
@@ -271,6 +256,7 @@
   <p>Las imágenes enviadas por el cliente se usan únicamente para el producto solicitado. No se almacenan ni se reutilizan en otros pedidos sin autorización.</p>
   <p>Los tiempos de entrega, condiciones de pago y opciones de envío se acuerdan directamente con el cliente. No se realizan transacciones automatizadas ni pagos en línea desde este sitio.</p>
   <p>Paul Design COL se reserva el derecho de actualizar los contenidos del sitio, incluyendo imágenes, textos y condiciones, sin previo aviso. El uso del sitio implica la aceptación de estos términos.</p>
+  <button onclick="ocultarSeccion('terminos')">Cerrar</button>
 </section>
 
 <!-- Botones flotantes -->
@@ -312,6 +298,11 @@
     const activa = document.getElementById(id);
     if (activa) activa.classList.add('activa');
     document.getElementById("menu").style.display = "none";
+  }
+
+  function ocultarSeccion(id) {
+    const seccion = document.getElementById(id);
+    if (seccion) seccion.classList.remove('activa');
   }
 
   // Cierre automático del menú al hacer clic fuera
