@@ -21,6 +21,8 @@
       background: #222;
       color: #fff;
       padding: 10px 20px;
+      position: relative;
+      z-index: 1001;
     }
 
     .top-bar h1 {
@@ -34,9 +36,15 @@
     }
 
     .menu-desplegable {
-      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
       background: #333;
-      padding: 10px 0;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 1000;
+      display: none;
     }
 
     .menu-desplegable ul {
@@ -80,8 +88,7 @@
       background: #fff;
     }
 
-    .slider-productos,
-    .slider-disenos {
+    .slider-productos {
       display: flex;
       animation: deslizar 20s infinite linear;
     }
@@ -297,6 +304,15 @@
     if (activa) activa.classList.add('activa');
     document.getElementById("menu").style.display = "none";
   }
+
+  // Cierre automático del menú al hacer clic fuera
+  document.addEventListener("click", function(event) {
+    const menu = document.getElementById("menu");
+    const toggle = document.querySelector(".menu-toggle");
+    if (menu.style.display === "block" && !menu.contains(event.target) && !toggle.contains(event.target)) {
+      menu.style.display = "none";
+    }
+  });
 </script>
 
 </body>
