@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-html lang="es">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paul Design COL - Diseño Personalizado Profesional en Bogotá</title>
-    <meta name="description" content="Diseño personalizado profesional en Bogotá. Camisetas, gorras, mugs con bordado y vinilo textil. Calidad garantizada. ¡Solicita tu cotización!">
-    <meta name="keywords" content="diseño personalizado Bogotá, camisetas personalizadas, gorras bordadas, mugs personalizados, vinilo textil,Dtf, Dtf UV,Bordado profesional">
+    <meta name="description" content="Diseño personalizado profesional en Bogotá. Bordado, vinilo textil, sublimación, DTF, DTF UV. Calidad garantizada. ¡Solicita tu cotización!">
+    <meta name="keywords" content="diseño personalizado Bogotá, camisetas personalizadas, gorras bordadas, mugs personalizados, vinilo textil, DTF, DTF UV, Bordado profesional, sublimación">
     
     <!-- Font Awesome para íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -234,51 +234,6 @@ html lang="es">
         .confianza-item p {
             color: #ccc;
             font-size: 0.95rem;
-        }
-
-        /* SECCIÓN PROCESO */
-        .proceso-section {
-            padding: 80px 20px;
-            background: var(--dark);
-        }
-
-        .proceso-steps {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-
-        .proceso-step {
-            background: var(--gray);
-            padding: 30px 20px;
-            border-radius: 15px;
-            border-top: 4px solid var(--primary);
-        }
-
-        .step-number {
-            background: var(--primary);
-            color: var(--darker);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin: 0 auto 15px;
-        }
-
-        .proceso-step h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .proceso-step p {
-            color: #ccc;
-            font-size: 0.9rem;
         }
 
         /* NUEVA SECCIÓN: GALERÍA DEL PROCESO DE TRABAJO */
@@ -1131,10 +1086,6 @@ html lang="es">
                 grid-template-columns: 1fr;
             }
 
-            .proceso-steps {
-                grid-template-columns: 1fr;
-            }
-
             .galeria-proceso {
                 grid-template-columns: 1fr;
             }
@@ -1239,7 +1190,8 @@ html lang="es">
     <header class="header">
         <nav class="nav-container">
             <a href="#inicio" class="logo">
-                <img src="img/proceso/milo-logo.svg" alt="Paul Design COL" class="logo-img" onerror="this.style.display='none'">
+                <!-- CORRECCIÓN 1: LOGO - Ruta corregida -->
+                <img src="img/milo-logo.svg" alt="Paul Design COL" class="logo-img">
                 <div class="logo-text">PAUL<span class="logo-highlight">DESIGN</span>COL</div>
             </a>
             
@@ -1250,12 +1202,13 @@ html lang="es">
             </button>
 
             <ul class="nav-menu" id="navMenu">
-            <li><a href="#inicio" class="nav-link">Inicio</a></li>
-            <li><a href="#galeria-proceso" class="nav-link">Nuestro Proceso</a></li>
-            <li><a href="#productos" class="nav-link">Productos</a></li>
-            <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
-            <li><a href="#contacto" class="nav-link">Contacto</a></li>
-        </ul>
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <!-- CORRECCIÓN 2: MENÚ - Enlace corregido para que funcione -->
+                <li><a href="#proceso" class="nav-link">Nuestro Proceso</a></li>
+                <li><a href="#productos" class="nav-link">Productos</a></li>
+                <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -1263,14 +1216,16 @@ html lang="es">
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h1 class="hero-title">Diseño Personalizado Profesional</h1>
-            <p class="hero-subtitle">Creamos productos únicos con bordado, vinilo textil y personalización de alta calidad en Bogotá. Transformamos tus ideas en realidad.</p>
+            <!-- CORRECCIÓN 3: DESCRIPCIÓN HERO - Técnicas agregadas -->
+            <p class="hero-subtitle">Especialistas en personalización profesional: bordado de precisión, vinilo textil de alta durabilidad, sublimación full color, estampado DTF, DTF UV para stickers y mucho más. En Bogotá transformamos tus ideas en productos únicos que destacan.</p>
             <a href="https://wa.me/573178052836?text=Hola%20Paul,%20me%20interesa%20solicitar%20una%20cotización%20para%20un%20diseño%20personalizado" class="cta-button" target="_blank">
                 <i class="fab fa-whatsapp"></i>
                 ¡Solicita tu Cotización!
             </a>
         </div>
     </section>
-        <!-- Elementos de Confianza -->
+
+    <!-- Elementos de Confianza -->
     <section class="confianza-section">
         <div class="confianza-grid">
             <div class="confianza-item">
@@ -1291,11 +1246,10 @@ html lang="es">
         </div>
     </section>
 
-    <!-- SECCIÓN PROCESO -->
-
-    <!-- NUEVA SECCIÓN: GALERÍA DEL PROCESO DE TRABAJO -->
+    <!-- GALERÍA DEL PROCESO DE TRABAJO -->
+    <!-- CORRECCIÓN 2: ID cambiado para que funcione con el menú -->
     <section class="galeria-proceso-section" id="proceso">
-        <h2 class="section-title">Galería de Nuestro Proceso</h2>
+        <h2 class="section-title">Nuestro Proceso de Trabajo</h2>
         <div class="galeria-proceso">
             <div class="proceso-item">
                 <img src="img/proceso/proceso-consulta.png" alt="Fase de consulta con el cliente" class="proceso-imagen" loading="lazy">
@@ -1338,8 +1292,7 @@ html lang="es">
             </div>
         </div>
     </section>
-
-    <!-- Carrusel de Productos -->
+        <!-- Carrusel de Productos -->
     <section class="carrusel-section" id="servicios">
         <h2 class="section-title">Nuestros Trabajos</h2>
         <div class="carrusel-container">
@@ -1416,39 +1369,42 @@ html lang="es">
         </div>
     </section>
 
-    <!-- SECCIÓN TESTIMONIOS - 3 COLUMNAS -->
+    <!-- SECCIÓN TESTIMONIOS - CORREGIDA -->
     <section class="testimonios-section" id="testimonios">
         <h2 class="section-title">Clientes Satisfechos</h2>
         <div class="testimonios-grid">
+            <!-- CORRECCIÓN 4: TESTIMONIO 1 - Liliana Barbosa mejorado -->
             <div class="testimonio-card">
                 <div class="testimonio-content">
                     <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
-                    <p class="testimonio-text">"Paul transformó nuestra visión en realidad. Las tarjetas quedaron tan profesionales que nuestros clientes preguntan dónde las hicimos. Calidad y atención excepcionales."</p>
+                    <p class="testimonio-text">"Quedé impresionada con la calidad del bordado en nuestras gorras para Aspen Colombia. Paul entendió perfectamente nuestra necesidad de un logo profesional y el resultado superó expectativas. El proceso fue rápido y la atención excelente."</p>
                     <div class="testimonio-cliente">
-                        <strong>GLOWYNAILS.co</strong>
-                        <span>Tarjetas personalizadas</span>
+                        <strong>Liliana Barbosa</strong>
+                        <span>Gorras con logo bordado - Aspen Colombia</span>
                     </div>
                 </div>
             </div>
             
+            <!-- CORRECCIÓN 4: TESTIMONIO 2 - Dully Molina agregado -->
             <div class="testimonio-card">
                 <div class="testimonio-content">
                     <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
-                    <p class="testimonio-text">"Trabajamos con Paul para las gorras de nuestra organización y el resultado superó expectativas. Atención al detalle increíble y entrega puntual. ¡Totalmente recomendado!"</p>
+                    <p class="testimonio-text">"Las gorras para nuestro equipo de trabajo de Cárnicos Cavalt quedaron perfectas. El estampado DTF es de alta calidad y resistente. Nuestros colaboradores están encantados con el diseño y la comodidad. Definitivamente repetiremos."</p>
                     <div class="testimonio-cliente">
-                        <strong>Liliana Barbosa</strong>
-                        <span>Gorras Aspen Colombia</span>
+                        <strong>Dully Molina</strong>
+                        <span>Gorras empresariales - Cárnicos Cavalt S.A.S</span>
                     </div>
                 </div>
             </div>
 
+            <!-- CORRECCIÓN 4: TESTIMONIO 3 - GLOWYNAILS mejorado -->
             <div class="testimonio-card">
                 <div class="testimonio-content">
                     <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
-                    <p class="testimonio-text">"Increíble servicio y calidad. Los mugs personalizados para mi cafetería quedaron perfectos. Mis clientes aman el diseño y la durabilidad. Definitivamente volveremos a trabajar con Paul."</p>
+                    <p class="testimonio-text">"Las tarjetas de presentación para Glowy Nails tienen un acabado premium que refleja perfectamente nuestra marca. Los clientes siempre preguntan dónde las hicimos. La atención al detalle y los materiales de calidad hacen la diferencia."</p>
                     <div class="testimonio-cliente">
-                        <strong>Café Urban Brew</strong>
-                        <span>Mugs personalizados</span>
+                        <strong>GLOWYNAILS.co</strong>
+                        <span>Tarjetas de presentación premium</span>
                     </div>
                 </div>
             </div>
